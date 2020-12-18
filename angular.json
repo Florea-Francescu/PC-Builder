@@ -120,5 +120,8 @@
       }
     }
   },
-  "defaultProject": "pc-builder"
+  "defaultProject": "pc-builder",
+  "cli": {
+    "analytics": false
+  }
 }
