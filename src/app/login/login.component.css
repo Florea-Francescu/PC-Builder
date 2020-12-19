@@ -1,0 +1,33 @@
+div.login-form {
+    padding-left: 2rem;
+    padding-right: 2rem;
+    max-width: 60rem;
+    margin: auto;
+}
+
+div.signup-text {
+    text-align: center;
+}
+
+div.line-text h5 {
+    width: 100%; 
+    text-align: center; 
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2); 
+    line-height: 0.1em;
+    margin: 10px 0 20px; 
+ } 
+ 
+div.line-text h5 span { 
+    background:#fff; 
+    padding:0 10px;
+}
+
+div.line-text {
+    color: rgba(0, 0, 0, 0.2);
+}
+
+.btn-google {
+    color: #545454;
+    background-color: #ffffff;
+    box-shadow: 0 1px 2px 1px #ddd
+}
