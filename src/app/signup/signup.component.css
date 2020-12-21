@@ -1,0 +1,14 @@
+div.login-form {
+    padding-left: 2rem;
+    padding-right: 2rem;
+    max-width: 60rem;
+    margin: auto;
+}
+
+div.error-text {
+    color: red;
+}
+
+.invalid {
+    border: 2px solid red;
+}

@@ -1,0 +1,45 @@
+<div class="login-form">
+    <form>
+        <div class="mb-3">
+            <label for="usernameInput" class="form-label">Username</label>
+            <input 
+                required ngModel name="usernameInput" #usernameInput="ngModel"
+                [class.invalid]="usernameInput.invalid && usernameInput.touched"
+                type="email" class="form-control" id="usernameInput" placeholder="Username">
+            <div *ngIf="usernameInput.invalid && usernameInput.touched" class="error-text">
+                <small>This field is required!</small>
+            </div>
+        </div>
+        <div class="mb-3">
+            <label for="emailInput" class="form-label">Email</label>
+            <input 
+                required ngModel name="emailInput" #emailInput="ngModel"
+                [class.invalid]="emailInput.invalid && emailInput.touched"
+                type="email" class="form-control" id="emailInput" placeholder="Email">
+            <div *ngIf="emailInput.invalid && emailInput.touched" class="error-text">
+                <small>This field is required!</small>
+            </div>
+        </div>
+        <div class="mb-3">
+            <label for="passwordInput" class="form-label">Password</label>
+            <input 
+                required ngModel name="passwordInput" #passwordInput="ngModel"
+                [class.invalid]="passwordInput.invalid && passwordInput.touched"
+                type="password" class="form-control" id="passwordInput" placeholder="Password">
+            <div *ngIf="passwordInput.invalid && passwordInput.touched" class="error-text">
+                <small>This field is required!</small>
+            </div>
+        </div>
+        <div class="mb-3">
+            <label for="confirmPasswordInput" class="form-label">Confirm Password</label>
+            <input
+                required ngModel name="confirmPasswordInput" #confirmPasswordInput="ngModel"
+                [class.invalid]="confirmPasswordInput.invalid && confirmPasswordInput.touched"
+                type="password" class="form-control" id="confirmPasswordInput" placeholder="Confirm Password">
+            <div *ngIf="confirmPasswordInput.invalid && confirmPasswordInput.touched" class="error-text">
+                <small>This field is required!</small>
+            </div>
+        </div>
+        <button type="submit" class=" mt-5 btn btn-primary btn-block">Create Account</button>
+    </form>
+</div>

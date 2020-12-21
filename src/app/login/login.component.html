@@ -1,0 +1,34 @@
+<div class="login-form">
+    <form>
+        <div class="mb-3">
+            <label for="emailInput" class="form-label">Email</label>
+            <input 
+                ngModel name="emailInput" #emailInput="ngModel"
+                type="email" class="form-control" id="emailInput" placeholder="Email">
+        </div>
+        <div class="mb-3">
+            <label for="passwordInput" class="form-label">Password</label>
+            <input 
+                ngModel name="passwordInput" #passwordInput="ngModel"
+                type="password" class="form-control" id="passwordInput" placeholder="Password">
+        </div>
+        <button type="submit" class=" mt-5 btn btn-primary btn-block">Sign In</button>
+    </form>
+    <div class="signup-text">
+        <small>
+            Don't have an account? <a href="#">Sign Up</a> here
+        </small>
+    </div>
+
+    <div class="mt-4"></div>
+
+    <div class="line-text">
+        <h5><span>OR</span></h5>
+    </div>
+
+    <div class="mt-4"></div>
+
+    <button class="btn btn-google btn-block btn-outline"><img src="https://img.icons8.com/color/16/000000/google-logo.png">
+         CONTINUE WITH GOOGLE
+    </button>
+</div>
