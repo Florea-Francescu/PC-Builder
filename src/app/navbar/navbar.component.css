@@ -1,0 +1,15 @@
+.navbar-brand{
+    font-size: 32px;
+
+}
+.vl {
+    border-left: 8px solid white;
+    padding-right: 20px;
+    height: 60px;
+  }
+.navbar-custom{
+    background-color: cornflowerblue;
+    font-size: 20px;
+    padding-right: 40px;
+    padding-left: 40px;
+}

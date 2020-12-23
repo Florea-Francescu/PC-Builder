@@ -7,13 +7,19 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { ConfiguratorComponent } from './configurator/configurator.component';
 import { LoginComponent } from './login/login.component';
 import { SignupComponent } from './signup/signup.component';
+import { NavbarComponent } from './navbar/navbar.component';
+import { InfoComponent } from './info/info.component';
+import { BuildsComponent } from './builds/builds.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ConfiguratorComponent,
     LoginComponent,
-    SignupComponent
+    SignupComponent,
+    NavbarComponent,
+    InfoComponent,
+    BuildsComponent
   ],
   imports: [
     BrowserModule,

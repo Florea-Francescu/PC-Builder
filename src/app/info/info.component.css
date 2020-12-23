@@ -1,0 +1,49 @@
+.container1{
+    background: rgb(80, 5, 150);
+    text-align: center;
+    color: blanchedalmond;
+    
+}
+
+.container2{
+    text-align: center;
+    color: black;
+}
+.container{
+    background-color: rgb(74, 71, 122);
+    
+}
+@media screen and (min-width: 601px) {
+    .container1 {
+      font-size: 80px;
+    }
+    .container2{
+        font-size: 60px;
+    }
+  }
+  
+  @media screen and (max-width: 600px) {
+    .container1 {
+      font-size: 30px;
+    }
+    .container2{
+        font-size: 20px;
+    }
+  }
+.img-fluid{
+    max-width: 100%;
+    height: auto;
+}
+.container3{
+    text-align: justify;
+    padding-right: 10px;
+}
+.row{
+    padding: 10px;
+    
+}
+.col-md-4{
+    border-style: solid;
+    
+}
+
