@@ -5,7 +5,24 @@
         "socket": "AM4",
         "cores": 4,
         "threads": 8,
-        "frequency": "3.6 GHz"
+        "frequency": "3.6 GHz",
+        "prices": [
+            { 
+                "seller": "pcgarage",
+                "url": "https://www.pcgarage.ro/procesoare/amd/ryzen-3-3100-36ghz-box/",
+                "price": 549.99
+            },
+            { 
+                "seller": "emag",
+                "url": "https://www.emag.ro/procesor-amd-ryzentm-3-3100-3-9-ghz-18mb-socket-am4-wraith-stealth-cooler-100-100000284box/pd/DLW0CMMBM/?X-Search-Id=c2d7761e50fe66ecb2c0&X-Product-Id=60199197&X-Search-Page=1&X-Search-Position=0&X-Section=search&X-MB=0&X-Search-Action=view",
+                "price": 736.20
+            },
+            { 
+                "seller": "evomag",
+                "url": "https://www.evomag.ro/componente-pc-gaming-procesoare/amd-procesor-amd-ryzen-3-3100-3.6-ghz-16mb-am4-65w-box-3789563.html",
+                "price": 549.99
+            }
+        ]
     },
     {
         "id": 2,
@@ -13,7 +30,19 @@
         "socket": "AM4",
         "cores": 4,
         "threads": 8,
-        "frequency": "3.8 GHz"
+        "frequency": "3.8 GHz",
+        "prices": [
+            { 
+                "seller": "pcgarage",
+                "url": "https://www.pcgarage.ro/procesoare/amd/ryzen-3-3300x-38ghz-box/",
+                "price": 582.98
+            },
+            { 
+                "seller": "evomag",
+                "url": "https://www.evomag.ro/componente-pc-gaming-procesoare/amd-procesor-amd-ryzen-3-3300x-3.8-ghz-16mb-am4-65w-box-3789564.html",
+                "price": 554.99
+            }
+        ]
     },
     {
         "id": 3,
@@ -21,6 +50,23 @@
         "socket": "AM4",
         "cores": 6,
         "threads": 12,
-        "frequency": "3.2 GHz"
+        "frequency": "3.2 GHz",
+        "prices": [
+            { 
+                "seller": "pcgarage",
+                "url": "https://www.pcgarage.ro/procesoare/amd/ryzen-5-1600-box/",
+                "price": 609.99
+            },
+            { 
+                "seller": "emag",
+                "url": "https://www.emag.ro/procesor-amd-ryzentm-5-1600af-3-6ghz-19mb-wraith-stealth-cooler-yd1600bbafbox/pd/DH90GWBBM/?X-Search-Id=2fd56fdbda77a811824e&X-Product-Id=6371531&X-Search-Page=1&X-Search-Position=0&X-Section=search&X-MB=0&X-Search-Action=view",
+                "price": 609.99
+            },
+            { 
+                "seller": "evomag",
+                "url": "https://www.evomag.ro/componente-pc-gaming-procesoare/amd-procesor-amd-ryzen-5-1600-3.2-ghz-am4-16mb-65w-box-3579255.html",
+                "price": 585.99
+            }
+        ]
     }
 ]

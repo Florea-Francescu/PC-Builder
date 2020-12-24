@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container" *ngIf="cpu">
     <h3>{{ cpu.name }}</h3>
     <h5>Details</h5>
     <ul class="list-group list-group-flush">
@@ -8,6 +8,5 @@
         <li class="list-group-item">Frequency: {{ cpu.frequency }}</li>
     </ul>
 
-    <h5>Prices</h5>
-    <p>WIP: will be added soon</p>
+    <app-prices-display [prices]="cpu.prices"></app-prices-display>
 </div>

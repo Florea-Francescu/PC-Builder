@@ -14,6 +14,7 @@ import { InfoComponent } from './info/info.component';
 import { BuildsComponent } from './builds/builds.component';
 import { ProductsService } from './_services/products.service';
 import { CpuComponent } from './cpu/cpu.component';
+import { PricesDisplayComponent } from './prices-display/prices-display.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { CpuComponent } from './cpu/cpu.component';
     NavbarComponent,
     InfoComponent,
     BuildsComponent,
-    CpuComponent
+    CpuComponent,
+    PricesDisplayComponent
   ],
   imports: [
     BrowserModule,

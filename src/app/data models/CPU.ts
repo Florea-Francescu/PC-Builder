@@ -1,5 +1,6 @@
-export interface CPU {
-    id: number;
+import { Product } from "./Product";
+
+export interface CPU extends Product {
     name: string;
     socket: string;
     cores: number;
