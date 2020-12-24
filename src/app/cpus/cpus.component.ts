@@ -1,0 +1,24 @@
+import { Component, OnInit } from '@angular/core';
+import { CPU } from '../data models/CPU';
+import { PricesService } from '../_services/prices.service';
+import { ProductsService } from '../_services/products.service';
+
+@Component({
+  selector: 'app-cpus',
+  templateUrl: './cpus.component.html',
+  styleUrls: ['./cpus.component.css']
+})
+export class CpusComponent implements OnInit {
+  cpus: CPU[];
+
+  constructor(
+    private productsService: ProductsService,
+    public pricesService: PricesService
+  ) { }
+
+  ngOnInit(): void {
+    this.productsService.getCPUs()
+      .subscribe(cpus => this.cpus = cpus);
+  }
+
+}

@@ -15,6 +15,8 @@ import { BuildsComponent } from './builds/builds.component';
 import { ProductsService } from './_services/products.service';
 import { CpuComponent } from './cpu/cpu.component';
 import { PricesDisplayComponent } from './prices-display/prices-display.component';
+import { CpusComponent } from './cpus/cpus.component';
+import { PricesService } from './_services/prices.service';
 
 @NgModule({
   declarations: [
@@ -26,7 +28,8 @@ import { PricesDisplayComponent } from './prices-display/prices-display.componen
     InfoComponent,
     BuildsComponent,
     CpuComponent,
-    PricesDisplayComponent
+    PricesDisplayComponent,
+    CpusComponent
   ],
   imports: [
     BrowserModule,
@@ -39,13 +42,15 @@ import { PricesDisplayComponent } from './prices-display/prices-display.componen
         { path: 'signup', component: SignupComponent },
         { path: 'configurator', component: ConfiguratorComponent },
         { path: 'builds', component: BuildsComponent },
-        { path: 'cpu/:id', component: CpuComponent }
+        { path: 'cpu/:id', component: CpuComponent },
+        { path: 'cpus', component: CpusComponent }
       ]
     ),
     HttpClientModule
   ],
   providers: [
-    ProductsService
+    ProductsService,
+    PricesService
   ],
   bootstrap: [AppComponent]
 })
