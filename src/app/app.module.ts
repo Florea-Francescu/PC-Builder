@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { RouterModule } from '@angular/router';
 
 import { AppComponent } from './app.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
@@ -24,7 +25,16 @@ import { BuildsComponent } from './builds/builds.component';
   imports: [
     BrowserModule,
     NgbModule,
-    FormsModule
+    FormsModule,
+    RouterModule.forRoot(
+      [
+        { path: '', component: InfoComponent },
+        { path: 'login', component: LoginComponent },
+        { path: 'signup', component: SignupComponent },
+        { path: 'configurator', component: ConfiguratorComponent },
+        { path: 'builds', component: BuildsComponent }
+      ]
+    )
   ],
   providers: [],
   bootstrap: [AppComponent]
