@@ -28,6 +28,8 @@ import { GpusComponent } from './_product-components/gpus/gpus.component';
 import { GpuComponent } from './_product-components/gpu/gpu.component';
 import { CasesComponent } from './_product-components/cases/cases.component';
 import { CaseComponent } from './_product-components/case/case.component';
+import { PsusComponent } from './_product-components/psus/psus.component';
+import { PsuComponent } from './_product-components/psu/psu.component';
 
 @NgModule({
   declarations: [
@@ -51,7 +53,9 @@ import { CaseComponent } from './_product-components/case/case.component';
     GpusComponent,
     GpuComponent,
     CasesComponent,
-    CaseComponent
+    CaseComponent,
+    PsusComponent,
+    PsuComponent
   ],
   imports: [
     BrowserModule,
@@ -75,7 +79,9 @@ import { CaseComponent } from './_product-components/case/case.component';
         { path: "gpu/:id", component: GpuComponent },
         { path: "gpus", component: GpusComponent },
         { path: "case/:id", component: CaseComponent },
-        { path: "cases", component: CasesComponent }
+        { path: "cases", component: CasesComponent },
+        { path: "psu/:id", component: PsuComponent },
+        { path: "psus", component: PsusComponent }
       ]
     ),
     HttpClientModule
