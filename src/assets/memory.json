@@ -1,0 +1,80 @@
+[
+    {
+        "id": 7,
+        "name": "Corsair Vengeance LPX Black 16GB 2666MHz",
+        "type": "DDR4",
+        "capacity": "16 GB",
+        "frequency": "2666 MHz",
+        "latency": "16 CL",
+        "kit": "Dual Channel",
+        "prices": [
+            {
+                "seller": "pcgarage",
+                "url": "https://www.pcgarage.ro/memorii/corsair/vengeance-lpx-black-16gb-ddr4-2666mhz-cl16-dual-channel-kit/",
+                "price": 399.98
+            },
+            {
+                "seller": "emag",
+                "url": "https://www.emag.ro/memorie-corsair-vengeance-lpx-16gb-2x8gb-dimm-ddr4-2666mhz-cl16-1-2v-xmp-2-0-black-cmk16gx4m2a2666c16/pd/DKC973BBM/?X-Search-Id=99a6edafaa42f2746208&X-Product-Id=41381082&X-Search-Page=1&X-Search-Position=4&X-Section=search&X-MB=0&X-Search-Action=view",
+                "price": 442.50
+            },
+            {
+                "seller": "evomag",
+                "url": "https://www.evomag.ro/componente-pc-gaming-memorii/corsair-memorii-corsair-vengeance-lpx-black-16gb-2x8gb-ddr4-2666mhz-cl16-dual-channel-3765581.html",
+                "price": 479.99
+            }
+        ]
+    },
+    {
+        "id": 8,
+        "name": "Kingston ValueRAM 4GB DDR3 1333MHz",
+        "type": "DDR3",
+        "capacity": "4 GB",
+        "frequency": "1333 MHz",
+        "latency": "9 CL",
+        "kit": "Single Channel",
+        "prices": [
+            {
+                "seller": "pcgarage",
+                "url": "https://www.pcgarage.ro/memorii/kingston/valueram-4gb-ddr3-1333mhz-cl9-srx8/",
+                "price": 109.99
+            },
+            {
+                "seller": "emag",
+                "url": "https://www.emag.ro/kingston-valueram-8gb-ddr4-2666mhz-cl19-sdram-sodimm-kvr26s19s8-8/pd/DX6KNCBBM/?X-Search-Id=207461aa5032d261ccbe&X-Product-Id=5165924&X-Search-Page=1&X-Search-Position=0&X-Section=search&X-MB=0&X-Search-Action=view",
+                "price": 169.98
+            },
+            {
+                "seller": "evomag",
+                "url": "https://www.evomag.ro/portabile-accesorii-laptop-memorii-laptop/kingston-memorie-laptop-kingston-so-dimm-1x4gb-ddr3-1333mhz-cl9-118263.html",
+                "price": 114.99
+            }
+        ]
+    },
+    {
+        "id": 9,
+        "name": "HyperX Fury Black 16GB DDR4 2666MHz",
+        "type": "DDR4",
+        "capacity": "16 GB",
+        "frequency": "2666 MHz",
+        "latency": "16 CL",
+        "kit": "Single Channel",
+        "prices": [
+            {
+                "seller": "pcgarage",
+                "url": "https://www.pcgarage.ro/memorii/hyperx/fury-black-16gb-ddr4-2666mhz-cl16-12v/",
+                "price": 284.79
+            },
+            {
+                "seller": "emag",
+                "url": "https://www.emag.ro/memorie-hyperx-fury-black-16gb-2x8gb-ddr4-2666mhz-cl16-1-2v-hx426c16fb3k2-16/pd/D9MYP6BBM/?X-Search-Id=2ec17a00966276f1e732&X-Product-Id=55718860&X-Search-Page=1&X-Search-Position=2&X-Section=search&X-MB=0&X-Search-Action=view",
+                "price": 386.29
+            },
+            {
+                "seller": "evomag",
+                "url": "https://www.evomag.ro/componente-pc-gaming-memorii/kingston-memorie-kingston-hyperx-fury-black-16gb-ddr4-2666mhz-cl16-3799808.html",
+                "price": 325.99
+            }
+        ]
+    }
+]

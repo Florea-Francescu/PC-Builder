@@ -1,6 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { CPU } from '../data models/CPU';
-import { Price } from '../data models/Price';
+import { Price } from '../../data models/Price';
 
 @Component({
   selector: 'app-prices-display',

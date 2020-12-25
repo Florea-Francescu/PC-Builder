@@ -4,6 +4,7 @@ import { Observable, of, throwError } from 'rxjs';
 import { catchError, filter, map, retry } from 'rxjs/operators';
 import { CPU } from '../data models/CPU';
 import { Motherboard } from '../data models/Motherboard';
+import { Memory } from '../data models/Memory';
 
 @Injectable({
   providedIn: 'root'
@@ -11,6 +12,7 @@ import { Motherboard } from '../data models/Motherboard';
 export class ProductsService {
   cpusUrl = "assets/cpu.json";
   motherboardsUrl = "assets/motherboard.json";
+  memoriesUrl = "assets/memory.json"
 
   constructor(
     private http: HttpClient
@@ -42,6 +44,22 @@ export class ProductsService {
         for(let motherboard of motherboards) {
           if(motherboard.id === id)
             return motherboard;
+        }
+        throw throwError(new Error("Invalid ID"));
+      })
+    );
+  }
+
+  getMemories() {
+    return this.http.get<Memory[]>(this.memoriesUrl);
+  }
+
+  getMemory(id: number) {
+    return this.getMemories().pipe(
+      map((memories: Memory[]) => {
+        for(let memory of memories) {
+          if(memory.id === id)
+            return memory;
         }
         throw throwError(new Error("Invalid ID"));
       })

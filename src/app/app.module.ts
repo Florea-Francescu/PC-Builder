@@ -14,12 +14,14 @@ import { InfoComponent } from './info/info.component';
 import { BuildsComponent } from './builds/builds.component';
 import { ProductsService } from './_services/products.service';
 import { CpuComponent } from './_product-components/cpu/cpu.component';
-import { PricesDisplayComponent } from './prices-display/prices-display.component';
+import { PricesDisplayComponent } from './_product-components/prices-display/prices-display.component';
 import { CpusComponent } from './_product-components/cpus/cpus.component';
 import { PricesService } from './_services/prices.service';
 import { MotherboardComponent } from './_product-components/motherboard/motherboard.component';
 import { MotherboardsComponent } from './_product-components/motherboards/motherboards.component';
 import { ProductsListComponent } from './_product-components/products-list/products-list.component';
+import { MemoryComponent } from './_product-components/memory/memory.component';
+import { MemoriesComponent } from './_product-components/memories/memories.component';
 
 @NgModule({
   declarations: [
@@ -35,7 +37,9 @@ import { ProductsListComponent } from './_product-components/products-list/produ
     CpusComponent,
     MotherboardComponent,
     MotherboardsComponent,
-    ProductsListComponent
+    ProductsListComponent,
+    MemoryComponent,
+    MemoriesComponent
   ],
   imports: [
     BrowserModule,
@@ -51,7 +55,9 @@ import { ProductsListComponent } from './_product-components/products-list/produ
         { path: 'cpu/:id', component: CpuComponent },
         { path: 'cpus', component: CpusComponent },
         { path: "motherboard/:id", component: MotherboardComponent },
-        { path: "motherboards", component: MotherboardsComponent }
+        { path: "motherboards", component: MotherboardsComponent },
+        { path: "memory/:id", component: MemoryComponent },
+        { path: "memories", component: MemoriesComponent }
       ]
     ),
     HttpClientModule

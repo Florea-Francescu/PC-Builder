@@ -1,0 +1,13 @@
+<div class="container" *ngIf="memory">
+    <h3>{{ memory.name }}</h3>
+    <h5>Details</h5>
+    <ul class="list-group list-group-flush">
+        <li class="list-group-item">Type: {{ memory.type }}</li>
+        <li class="list-group-item">Capacity: {{ memory.capacity }}</li>
+        <li class="list-group-item">Frequency: {{ memory.frequency}}</li>
+        <li class="list-group-item">Latency: {{ memory.latency }}</li>
+        <li class="list-group-item">Kit: {{ memory.kit }}</li>
+    </ul>
+
+    <app-prices-display [prices]="memory.prices"></app-prices-display>
+</div>
