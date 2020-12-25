@@ -1,0 +1,13 @@
+<div class="container" *ngIf="storage">
+    <h3>{{ storage.name }}</h3>
+    <h5>Details</h5>
+    <ul class="list-group list-group-flush">
+        <li class="list-group-item">Type: {{ storage.type }}</li>
+        <li class="list-group-item">Capacity: {{ storage.capacity }}</li>
+        <li class="list-group-item">Max Read Speed: {{ storage.maxRead }}</li>
+        <li class="list-group-item">Max Write Speed: {{ storage.maxWrite }}</li>
+        <li class="list-group-item">Form Factor: {{ storage.formFactor }}</li>
+    </ul>
+
+    <app-prices-display [prices]="storage.prices"></app-prices-display>
+</div>

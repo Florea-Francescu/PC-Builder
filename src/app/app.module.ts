@@ -22,6 +22,8 @@ import { MotherboardsComponent } from './_product-components/motherboards/mother
 import { ProductsListComponent } from './_product-components/products-list/products-list.component';
 import { MemoryComponent } from './_product-components/memory/memory.component';
 import { MemoriesComponent } from './_product-components/memories/memories.component';
+import { StoragesComponent } from './_product-components/storages/storages.component';
+import { StorageComponent } from './_product-components/storage/storage.component';
 
 @NgModule({
   declarations: [
@@ -39,7 +41,9 @@ import { MemoriesComponent } from './_product-components/memories/memories.compo
     MotherboardsComponent,
     ProductsListComponent,
     MemoryComponent,
-    MemoriesComponent
+    MemoriesComponent,
+    StoragesComponent,
+    StorageComponent
   ],
   imports: [
     BrowserModule,
@@ -57,7 +61,9 @@ import { MemoriesComponent } from './_product-components/memories/memories.compo
         { path: "motherboard/:id", component: MotherboardComponent },
         { path: "motherboards", component: MotherboardsComponent },
         { path: "memory/:id", component: MemoryComponent },
-        { path: "memories", component: MemoriesComponent }
+        { path: "memories", component: MemoriesComponent },
+        { path: "storage/:id", component: StorageComponent },
+        { path: "storages", component: StoragesComponent }
       ]
     ),
     HttpClientModule
