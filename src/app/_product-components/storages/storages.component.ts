@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Storage } from 'src/app/data models/Storage';
 import { PricesService } from 'src/app/_services/prices.service';
 import { ProductsService } from 'src/app/_services/products.service';
 
