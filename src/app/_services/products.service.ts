@@ -7,6 +7,7 @@ import { Motherboard } from '../data models/Motherboard';
 import { Memory } from '../data models/Memory';
 import { Storage } from '../data models/Storage';
 import { GPU } from '../data models/GPU';
+import { Case } from '../data models/Case';
 
 @Injectable({
   providedIn: 'root'
@@ -14,9 +15,10 @@ import { GPU } from '../data models/GPU';
 export class ProductsService {
   cpusUrl = "assets/cpu.json";
   motherboardsUrl = "assets/motherboard.json";
-  memoriesUrl = "assets/memory.json"
-  storagesUrl = "assets/storage.json"
-  gpusUrl = "assets/gpu.json"
+  memoriesUrl = "assets/memory.json";
+  storagesUrl = "assets/storage.json";
+  gpusUrl = "assets/gpu.json";
+  casesUrl = "assets/case.json";
 
   constructor(
     private http: HttpClient
@@ -96,6 +98,22 @@ export class ProductsService {
         for(let gpu of gpus) {
           if(gpu.id === id)
             return gpu;
+        }
+        throw throwError(new Error("Invalid ID"));
+      })
+    );
+  }
+
+  getCases() {
+    return this.http.get<Case[]>(this.casesUrl);
+  }
+
+  getCase(id: number) {
+    return this.getCases().pipe(
+      map((cases: Case[]) => {
+        for(let cs of cases) {
+          if(cs.id === id)
+            return cs;
         }
         throw throwError(new Error("Invalid ID"));
       })

@@ -1,0 +1,72 @@
+[
+    {
+        "id": 18,
+        "name": "AQIRYS Bellatrix",
+        "type": "MiniTower",
+        "dimensions": "358 x 325 x 170 mm",
+        "expansionSlots": 4,
+        "motherboards": ["mATX", "mITX"],
+        "prices": [
+            {
+                "seller": "pcgarage",
+                "url": "https://www.pcgarage.ro/carcase/aqirys/bellatrix/",
+                "price": 110.49
+            },
+            {
+                "seller": "evomag",
+                "url": "https://www.evomag.ro/componente-pc-gaming-carcase/aqirys-carcasa-aqirys-bellatrix-mini-tower-iluminare-rainbow-negru-3788171.html",
+                "price": 129.00
+            }
+        ]
+    },
+    {
+        "id": 19,
+        "name": "Floston Dark Brushed RGB",
+        "type": "MiddleTower",
+        "dimensions": "455 x 360 x 192 mm",
+        "expansionSlots": 7,
+        "motherboards": ["ATX"],
+        "prices": [
+            {
+                "seller": "pcgarage",
+                "url": "https://www.pcgarage.ro/carcase/floston/dark-brushed-rgb/",
+                "price": 176.13
+            },
+            {
+                "seller": "emag",
+                "url": "https://www.emag.ro/carcasa-floston-dark-brushed-rgb-middle-tower-atx-fara-sursa-black-dark-brushed-rgb/pd/DV2NZWBBM/?X-Search-Id=e385a6968fb71ff20b8d&X-Product-Id=6350074&X-Search-Page=1&X-Search-Position=0&X-Section=search&X-MB=0&X-Search-Action=view",
+                "price": 185.22
+            },
+            {
+                "seller": "evomag",
+                "url": "https://www.evomag.ro/componente-pc-gaming-carcase/floston-carcasa-floston-dark-brushed-rgb-midtower-negru-3783696.html",
+                "price": 212.99
+            }
+        ]
+    },
+    {
+        "id": 20,
+        "name": "Segotep Fenix",
+        "type": "MiddleTower",
+        "dimensions": "450 x 436 x 208 mm",
+        "expansionSlots": 7,
+        "motherboards": ["mATX", "mITX", "ATX"],
+        "prices": [
+            {
+                "seller": "pcgarage",
+                "url": "https://www.pcgarage.ro/carcase/segotep/fenix/",
+                "price": 219.99
+            },
+            {
+                "seller": "emag",
+                "url": "https://www.emag.ro/carcasa-segotep-fenix-middle-tower-fara-sursa-atx-negru-fenix-bk/pd/DG8MK8BBM/?X-Search-Id=bee38aac71adfa011893&X-Product-Id=6033768&X-Search-Page=1&X-Search-Position=15&X-Section=search&X-MB=0&X-Search-Action=view",
+                "price": 349.99
+            },
+            {
+                "seller": "evomag",
+                "url": "https://www.evomag.ro/componente-pc-gaming-carcase/segotep-carcasa-segotep-fenix-midtower-negru-3675586.html",
+                "price": 296.99
+            }
+        ]
+    }
+]

@@ -26,6 +26,8 @@ import { StoragesComponent } from './_product-components/storages/storages.compo
 import { StorageComponent } from './_product-components/storage/storage.component';
 import { GpusComponent } from './_product-components/gpus/gpus.component';
 import { GpuComponent } from './_product-components/gpu/gpu.component';
+import { CasesComponent } from './_product-components/cases/cases.component';
+import { CaseComponent } from './_product-components/case/case.component';
 
 @NgModule({
   declarations: [
@@ -47,7 +49,9 @@ import { GpuComponent } from './_product-components/gpu/gpu.component';
     StoragesComponent,
     StorageComponent,
     GpusComponent,
-    GpuComponent
+    GpuComponent,
+    CasesComponent,
+    CaseComponent
   ],
   imports: [
     BrowserModule,
@@ -69,7 +73,9 @@ import { GpuComponent } from './_product-components/gpu/gpu.component';
         { path: "storage/:id", component: StorageComponent },
         { path: "storages", component: StoragesComponent },
         { path: "gpu/:id", component: GpuComponent },
-        { path: "gpus", component: GpusComponent }
+        { path: "gpus", component: GpusComponent },
+        { path: "case/:id", component: CaseComponent },
+        { path: "cases", component: CasesComponent }
       ]
     ),
     HttpClientModule
