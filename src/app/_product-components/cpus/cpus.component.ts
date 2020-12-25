@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { CPU } from '../data models/CPU';
-import { PricesService } from '../_services/prices.service';
-import { ProductsService } from '../_services/products.service';
+import { CPU } from '../../data models/CPU';
+import { PricesService } from '../../_services/prices.service';
+import { ProductsService } from '../../_services/products.service';
 
 @Component({
   selector: 'app-cpus',
@@ -10,6 +10,7 @@ import { ProductsService } from '../_services/products.service';
 })
 export class CpusComponent implements OnInit {
   cpus: CPU[];
+  url = "cpu"
 
   constructor(
     private productsService: ProductsService,

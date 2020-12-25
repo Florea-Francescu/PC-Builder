@@ -1,5 +1,5 @@
 <div class="container">
-    <h3>CPU List</h3>
+    <h3>{{ productName }} List</h3>
     <table class="table">
         <thead>
           <tr>
@@ -9,9 +9,9 @@
           </tr>
         </thead>
         <tbody>
-          <tr *ngFor="let cpu of cpus">
-            <td><a [routerLink]="['/cpu/', cpu.id]">{{ cpu.name }}</a></td>
-            <td>{{ pricesService.getLowest(cpu.prices).price }}</td>
+          <tr *ngFor="let product of products">
+            <td><a [routerLink]="['/', singleProductUrl, product.id]">{{ product.name }}</a></td>
+            <td>{{ pricesService.getLowest(product.prices).price }}</td>
             <td>
                 <button class="btn btn-primary">
                     <span class="material-icons align-text-bottom">

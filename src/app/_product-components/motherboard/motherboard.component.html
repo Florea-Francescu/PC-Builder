@@ -1,0 +1,14 @@
+<div class="container" *ngIf="motherboard">
+    <h3>{{ motherboard.name }}</h3>
+    <h5>Details</h5>
+    <ul class="list-group list-group-flush">
+        <li class="list-group-item">Format: {{ motherboard.format }}</li>
+        <li class="list-group-item">Socket: {{ motherboard.socket }}</li>
+        <li class="list-group-item">Chipset: {{ motherboard.chipset }}</li>
+        <li class="list-group-item">Memory Type: {{ motherboard.memoryType }}</li>
+        <li class="list-group-item">Maximum Memory: {{ motherboard.maxMemory }}</li>
+        <li class="list-group-item">Number of Memory Slots: {{ motherboard.slots }}</li>
+    </ul>
+
+    <app-prices-display [prices]="motherboard.prices"></app-prices-display>
+</div>
