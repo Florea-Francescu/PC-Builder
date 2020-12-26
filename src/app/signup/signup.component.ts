@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { AuthenticationService } from '../_services/authentication.service';
 
 @Component({
   selector: 'app-signup',
@@ -6,10 +7,14 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./signup.component.css']
 })
 export class SignupComponent implements OnInit {
-
-  constructor() { }
+  @ViewChild('emailInput') email;
+  @ViewChild('passwordInput') pass;
+  constructor(public auth: AuthenticationService) { }
 
   ngOnInit(): void {
+  }
+  SignUp(){
+    this.auth.SignUp(this.email.value,this.pass.value);
   }
 
 }
