@@ -5,21 +5,45 @@ import { CPU } from '../data models/CPU';
 import { GPU } from '../data models/GPU';
 import { Memory } from '../data models/Memory';
 import { Motherboard } from '../data models/Motherboard';
+import { Product } from '../data models/Product';
 import { PSU } from '../data models/PSU';
 import { Storage } from '../data models/Storage';
 
 @Injectable({
   providedIn: 'root'
 })
-export class BuildService {
+export class BuildService { /////TODO: add incomapatibility checks for the build!
   build: Build;
 
-  constructor() { }
+  constructor() {
+    this.build = {
+      "cpu": null,
+      "motherboard": null,
+      "memory": [],
+      "storage": [],
+      "gpu": null,
+      "_case": null,
+      "psu": null
+    }
+  }
 
   getBuild() {
     console.log(this.build);
 
     return this.build;
+  }
+
+  addProduct(product: any, type: string) {
+    switch (type) {
+      case "CPU": this.setCPU(product); break;
+      case "Motherboard": this.setCPU(product); break;
+      case "Memory": this.addMemory(product); break;
+      case "Storage": this.addStorage(product); break;
+      case "GPU": this.setGPU(product); break;
+      case "Case": this.setCase(product); break;
+      case "PSU": this.setPSU(product); break;
+      default: throw new Error("Unknown Product!");
+    }
   }
 
   //CPU

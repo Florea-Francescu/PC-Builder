@@ -1,5 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Product } from 'src/app/data models/Product';
+import { BuildService } from 'src/app/_services/build.service';
 import { PricesService } from 'src/app/_services/prices.service';
 
 @Component({
@@ -13,10 +14,16 @@ export class ProductsListComponent implements OnInit {
   @Input('singleProductUrl') singleProductUrl: string;
 
   constructor(
-    public pricesService: PricesService
+    public pricesService: PricesService,
+    public buildService: BuildService
   ) { }
 
   ngOnInit(): void {
   }
 
+  addProduct(product: any) {
+    switch(this.productName) {
+      case "CPU": this.buildService.setCPU(product); break;
+    }
+  }
 }

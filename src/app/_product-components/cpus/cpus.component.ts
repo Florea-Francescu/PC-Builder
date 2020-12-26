@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { BuildService } from 'src/app/_services/build.service';
 import { CPU } from '../../data models/CPU';
 import { PricesService } from '../../_services/prices.service';
 import { ProductsService } from '../../_services/products.service';
