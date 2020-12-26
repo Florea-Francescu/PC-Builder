@@ -2,6 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
@@ -11,6 +12,24 @@ import { SignupComponent } from './signup/signup.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { InfoComponent } from './info/info.component';
 import { BuildsComponent } from './builds/builds.component';
+import { ProductsService } from './_services/products.service';
+import { CpuComponent } from './_product-components/cpu/cpu.component';
+import { PricesDisplayComponent } from './_product-components/prices-display/prices-display.component';
+import { CpusComponent } from './_product-components/cpus/cpus.component';
+import { PricesService } from './_services/prices.service';
+import { MotherboardComponent } from './_product-components/motherboard/motherboard.component';
+import { MotherboardsComponent } from './_product-components/motherboards/motherboards.component';
+import { ProductsListComponent } from './_product-components/products-list/products-list.component';
+import { MemoryComponent } from './_product-components/memory/memory.component';
+import { MemoriesComponent } from './_product-components/memories/memories.component';
+import { StoragesComponent } from './_product-components/storages/storages.component';
+import { StorageComponent } from './_product-components/storage/storage.component';
+import { GpusComponent } from './_product-components/gpus/gpus.component';
+import { GpuComponent } from './_product-components/gpu/gpu.component';
+import { CasesComponent } from './_product-components/cases/cases.component';
+import { CaseComponent } from './_product-components/case/case.component';
+import { PsusComponent } from './_product-components/psus/psus.component';
+import { PsuComponent } from './_product-components/psu/psu.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +39,23 @@ import { BuildsComponent } from './builds/builds.component';
     SignupComponent,
     NavbarComponent,
     InfoComponent,
-    BuildsComponent
+    BuildsComponent,
+    CpuComponent,
+    PricesDisplayComponent,
+    CpusComponent,
+    MotherboardComponent,
+    MotherboardsComponent,
+    ProductsListComponent,
+    MemoryComponent,
+    MemoriesComponent,
+    StoragesComponent,
+    StorageComponent,
+    GpusComponent,
+    GpuComponent,
+    CasesComponent,
+    CaseComponent,
+    PsusComponent,
+    PsuComponent
   ],
   imports: [
     BrowserModule,
@@ -32,11 +67,29 @@ import { BuildsComponent } from './builds/builds.component';
         { path: 'login', component: LoginComponent },
         { path: 'signup', component: SignupComponent },
         { path: 'configurator', component: ConfiguratorComponent },
-        { path: 'builds', component: BuildsComponent }
+        { path: 'builds', component: BuildsComponent },
+        { path: 'cpu/:id', component: CpuComponent },
+        { path: 'cpus', component: CpusComponent },
+        { path: "motherboard/:id", component: MotherboardComponent },
+        { path: "motherboards", component: MotherboardsComponent },
+        { path: "memory/:id", component: MemoryComponent },
+        { path: "memories", component: MemoriesComponent },
+        { path: "storage/:id", component: StorageComponent },
+        { path: "storages", component: StoragesComponent },
+        { path: "gpu/:id", component: GpuComponent },
+        { path: "gpus", component: GpusComponent },
+        { path: "case/:id", component: CaseComponent },
+        { path: "cases", component: CasesComponent },
+        { path: "psu/:id", component: PsuComponent },
+        { path: "psus", component: PsusComponent }
       ]
-    )
+    ),
+    HttpClientModule
   ],
-  providers: [],
+  providers: [
+    ProductsService,
+    PricesService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

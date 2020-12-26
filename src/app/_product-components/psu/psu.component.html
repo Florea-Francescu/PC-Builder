@@ -1,0 +1,12 @@
+<div class="container" *ngIf="psu">
+    <h3>{{ psu.name }}</h3>
+    <h5>Details</h5>
+    <ul class="list-group list-group-flush">
+        <li class="list-group-item">Power: {{ psu.power }}</li>
+        <li class="list-group-item">Efficiency: {{ psu.efficiency }}</li>
+        <li class="list-group-item">Certification: {{ psu.certification }}</li>
+        <li class="list-group-item">Dimensions: {{ psu.dimensions }}</li>
+    </ul>
+
+    <app-prices-display [prices]="psu.prices"></app-prices-display>
+</div>

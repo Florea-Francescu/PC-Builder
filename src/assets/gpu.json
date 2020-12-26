@@ -1,0 +1,96 @@
+[
+    {
+        "id": 14,
+        "name": "XFX Radeon RX 580 GTS XXX Edition 8GB GDDR5 256-bit",
+        "interface": "PCI Express x16 3.0",
+        "series": "Radeon RX 500",
+        "clock": "1366 MHz",
+        "memoryType": "GDDR5",
+        "memorySize": "8 GB",
+        "prices": [
+            {
+                "seller": "pcgarage",
+                "url": "https://www.pcgarage.ro/placi-video/xfx/radeon-rx-580-gts-xxx-edition-8gb-ddr5-256-bit/",
+                "price": 1118.25
+            },
+            {
+                "seller": "emag",
+                "url": "https://www.emag.ro/placa-video-xfx-radeon-rx-580-gts-xxx-8gb-256-bit-rx-580p8dfd6/pd/D67GTDBBM/?X-Search-Id=d86e4513a13cba4e22bd&X-Product-Id=1509458&X-Search-Page=1&X-Search-Position=0&X-Section=search&X-MB=0&X-Search-Action=view",
+                "price": 1118.25
+            }
+        ]
+    },
+    {
+        "id": 15,
+        "name": "Sapphire Radeon RX 5700 XT NITRO+ BE 8GB GDDR6 256-bit",
+        "interface": "PCI Express x16 4.0",
+        "series": "Radeon RX 5700",
+        "clock": "1730 MHz",
+        "memoryType": "GDDR6",
+        "memorySize": "8 GB",
+        "prices": [
+            {
+                "seller": "pcgarage",
+                "url": "https://www.pcgarage.ro/placi-video/sapphire/radeon-rx-5700-xt-nitro-plus-be-8gb-gddr6-256-bit/",
+                "price": 2799.99
+            },
+            {
+                "seller": "emag",
+                "url": "https://www.emag.ro/placa-video-sapphire-radeontm-rx-5700-xt-nitro-8gb-gddr6-256-bit-11293-03-40g/pd/DCRBK8BBM/?X-Search-Id=0242c41ac7dc6e9a190f&X-Product-Id=63936214&X-Search-Page=1&X-Search-Position=0&X-Section=search&X-MB=0&X-Search-Action=view",
+                "price": 4118.31
+            },
+            {
+                "seller": "evomag",
+                "url": "https://www.evomag.ro/componente-pc-gaming-placi-video/sapphire-placa-video-sapphire-radeon-rx-5700-xt-nitro-be-8gb-gddr6-256-bit-3803493.html",
+                "price": 2699.00
+            }
+        ]
+    },
+    {
+        "id": 16,
+        "name": "Gainward GeForce GTX 1660 SUPER Ghost 6GB GDDR6 192-bit",
+        "interface": "PCI Express x16 3.0",
+        "series": "GeForce GTX 1600",
+        "clock": "1785 MHz",
+        "memoryType": "GDDR6",
+        "memorySize": "6 GB",
+        "prices": [
+            {
+                "seller": "pcgarage",
+                "url": "https://www.pcgarage.ro/placi-video/gainward/geforce-gtx-1660-super-ghost-6gb-gddr6-192-bit/",
+                "price": 1163.30
+            },
+            {
+                "seller": "emag",
+                "url": "https://www.emag.ro/placa-video-gainward-geforcer-gtx-1650-d6-ghost-4gb-gddr6-128-bit-471056224-1914/pd/D9SGL7MBM/?X-Search-Id=0c291f89af75f20cac90&X-Product-Id=67179170&X-Search-Page=1&X-Search-Position=0&X-Section=search&X-MB=0&X-Search-Action=view",
+                "price": 849.00
+            },
+            {
+                "seller": "evomag",
+                "url": "https://www.evomag.ro/componente-pc-gaming-placi-video/gainward-placa-video-gainward-geforce-gtx-1660-super-ghost-6gb-gddr6-192-bit-3773847.html",
+                "price": 1199.99
+            }
+        ]
+    },
+    {
+        "id": 17,
+        "name": "Gainward GeForce GTX 1660 SUPER Ghost 6GB GDDR6 192-bit",
+        "interface": "PCI Express x16 3.0",
+        "series": "GeForce RTX 2000",
+        "clock": "1350 MHz",
+        "memoryType": "GDDR6",
+        "memorySize": "11 GB",
+        "prices": [
+            {
+                "seller": "pcgarage",
+                "url": "https://www.pcgarage.ro/placi-video/msi/geforce-rtx-2080-ti-ventus-gp-11gb-gddr6-352-bit/",
+                "price": 5554.18
+            },
+            {
+                "seller": "evomag",
+                "url": "https://www.evomag.ro/componente-pc-gaming-placi-video/msi-placa-video-msi-geforce-rtx-2080-ti-ventus-gp-oc-11gb-gddr6-352-bit-3783491.html",
+                "price": 6499.99
+            }
+        ]
+    }
+]

@@ -1,0 +1,12 @@
+<div class="container" *ngIf="cs">
+    <h3>{{ cs.name }}</h3>
+    <h5>Details</h5>
+    <ul class="list-group list-group-flush">
+        <li class="list-group-item">Type: {{ cs.type }}</li>
+        <li class="list-group-item">Dimensions: {{ cs.dimenstions }}</li>
+        <li class="list-group-item">Expansion Slots: {{ cs.expansionSlots }}</li>
+        <li class="list-group-item">Supported Motherboards: {{ cs.motherboards }}</li>
+    </ul>
+
+    <app-prices-display [prices]="cs.prices"></app-prices-display>
+</div>

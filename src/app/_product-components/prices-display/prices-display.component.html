@@ -1,0 +1,19 @@
+<h5>Prices</h5>
+<table class="table">
+    <thead>
+      <tr>
+        <th scope="col">Seller</th>
+        <th scope="col">Price</th>
+        <th scope="col"></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let price of prices">
+        <td>{{ price.seller }}</td>
+        <td>{{ price.price }}</td>
+        <td>
+            <a class="btn btn-primary" [href]="price.url">Buy</a>
+        </td>
+      </tr>
+    </tbody>
+</table>

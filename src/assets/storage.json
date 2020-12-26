@@ -1,0 +1,106 @@
+[
+    {
+        "id": 10,
+        "type": "SSD",
+        "name": "Kingston A400 240GB SATA-III 2.5 inch",
+        "capacity": "240 GB",
+        "maxRead": "500 MB/s",
+        "maxWrite": "350 MB/s",
+        "formFactor": "2.5 inch",
+        "prices": [
+            {
+                "seller": "pcgarage",
+                "url": "https://www.pcgarage.ro/ssd/kingston/a400-240gb-sata-iii-25-inch/",
+                "price": 143.10
+            },
+            {
+                "seller": "emag",
+                "url": "https://www.emag.ro/solid-state-drive-ssd-kingston-a400-240gb-2-5-sata-iii-sa400s37-240g/pd/DGF30DBBM/?X-Search-Id=cd51e5995b54d6a9426c&X-Product-Id=1516760&X-Search-Page=1&X-Search-Position=0&X-Section=search&X-MB=0&X-Search-Action=view",
+                "price": 139.93
+            },
+            {
+                "seller": "evomag",
+                "url": "https://www.evomag.ro/componente-pc-gaming-solid-state-drive-ssd/kingston-ssd-kingston-a400-240gb-2.5-sata-iii-600-3584154.html",
+                "price": 134.99
+            }
+        ]
+    },
+    {
+        "id": 11,
+        "type": "SSD",
+        "name": "ADATA SU630 240GB SATA-III 2.5 inch",
+        "capacity": "240 GB",
+        "maxRead": "520 MB/s",
+        "maxWrite": "450 MB/s",
+        "formFactor": "2.5 inch",
+        "prices": [
+            {
+                "seller": "pcgarage",
+                "url": "https://www.pcgarage.ro/ssd/a-data/su630-240gb-sata-iii-25-inch/",
+                "price": 136.73
+            },
+            {
+                "seller": "emag",
+                "url": "https://www.emag.ro/solid-state-drive-ssd-adata-su630-3d-nand-240gb-sata-iii-2-5-asu630ss-240gq-r/pd/D3QV2CBBM/?X-Search-Id=8693ac4e559a47da40a6&X-Product-Id=56306980&X-Search-Page=1&X-Search-Position=0&X-Section=search&X-MB=0&X-Search-Action=view",
+                "price": 145.99
+            },
+            {
+                "seller": "evomag",
+                "url": "https://www.evomag.ro/componente-pc-gaming-solid-state-drive-ssd/a-data-ssd-a-data-ultimate-su630-240gb-sata-iii-600-2.5-3685748.html",
+                "price": 137.99
+            }
+        ]
+    },
+    {
+        "id": 12,
+        "type": "SSD",
+        "name": "Samsung 860 EVO 500GB SATA-III 2.5 inch",
+        "capacity": "500 GB",
+        "maxRead": "550 MB/s",
+        "maxWrite": "520 MB/s",
+        "formFactor": "2.5 inch",
+        "prices": [
+            {
+                "seller": "pcgarage",
+                "url": "https://www.pcgarage.ro/ssd/samsung/860-evo-500gb-sata-iii-25-inch/",
+                "price": 360.39
+            },
+            {
+                "seller": "emag",
+                "url": "https://www.emag.ro/solid-state-drive-ssd-samsung-860-evo-500gb-2-5-sata-iii-mz-76e500b-eu/pd/DBN899BBM/?X-Search-Id=107a15984fca2af5a164&X-Product-Id=35714099&X-Search-Page=1&X-Search-Position=0&X-Section=search&X-MB=0&X-Search-Action=view",
+                "price": 363.99
+            },
+            {
+                "seller": "evomag",
+                "url": "https://www.evomag.ro/componente-pc-gaming-solid-state-drive-ssd/samsung-ssd-samsung-860-evo-500gb-sata-iii-600-3606606.html",
+                "price": 329.00
+            }
+        ]
+    },
+    {
+        "id": 13,
+        "type": "HDD",
+        "name": "Seagate BarraCuda 1TB SATA-III 7200RPM 64MB",
+        "capacity": "1 TB",
+        "maxRead": "-",
+        "maxWrite": "-",
+        "formFactor": "3.5 inch",
+        "prices": [
+            {
+                "seller": "pcgarage",
+                "url": "https://www.pcgarage.ro/hard-disk-uri/seagate/barracuda-1tb-sata-iii-7200rpm-64mb/",
+                "price": 189.99
+            },
+            {
+                "seller": "emag",
+                "url": "https://www.emag.ro/hdd-seagate-barracuda-1tb-7200rpm-64mb-cache-sata-iii-st1000dm010/pd/DZLJQ2BBM/?X-Search-Id=bcedc0fcb9c02362740e&X-Product-Id=1260225&X-Search-Page=1&X-Search-Position=0&X-Section=search&X-MB=0&X-Search-Action=view",
+                "price": 183.83
+            },
+            {
+                "seller": "evomag",
+                "url": "https://www.evomag.ro/componente-pc-gaming-hard-disk-drive-hdd-desktop/seagate-hdd-desktop-seagate-barracuda-1tb-sata-iii-600-64-mb-2799412.html",
+                "price": 184.00
+            }
+        ]
+    }
+]

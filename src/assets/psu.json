@@ -1,0 +1,77 @@
+[
+    {
+        "id": 21,
+        "name": "Seasonic S12III-550",
+        "power": "550 W",
+        "efficiency": "85%",
+        "certification": "80+ Bronze",
+        "dimensions": "140 x 150 x 86 mm",
+        "prices": [
+            {
+                "seller": "pcgarage",
+                "url": "https://www.pcgarage.ro/surse/seasonic/s12iii-550-80-plus-bronze-550w/",
+                "price": 259.99
+            },
+            {
+                "seller": "emag",
+                "url": "https://www.emag.ro/sursa-seasonic-s12iii-series-80-plusr-bronze-550w-ssr-550gb3/pd/DSXWQGBBM/?X-Search-Id=38ab54967197a66e11ab&X-Product-Id=6182048&X-Search-Page=1&X-Search-Position=0&X-Section=search&X-MB=0&X-Search-Action=view",
+                "price": 279.91
+            },
+            {
+                "seller": "evomag",
+                "url": "https://www.evomag.ro/componente-pc-gaming-surse/seasonic-sursa-seasonic-s12iii-550-80-bronze-550w-3779851.html",
+                "price": 264.00
+            }
+        ]
+    },
+    {
+        "id": 22,
+        "name": "Seasonic Focus GX",
+        "power": "550 W",
+        "efficiency": "90%",
+        "certification": "80+ Gold",
+        "dimensions": "150 x 140 x 86 mm",
+        "prices": [
+            {
+                "seller": "pcgarage",
+                "url": "https://www.pcgarage.ro/surse/seasonic/focus-gx-80-plus-gold-550w/",
+                "price": 466.45
+            },
+            {
+                "seller": "emag",
+                "url": "https://www.emag.ro/sursa-seasonic-550w-focus-gx-series-80-plus-gold-full-modulara-atx-v2-4-eficienta-90-ventilator-120mm-fdb-bearing-pfc-activ-focus-gx-550-ssr-550fx/pd/D3QD36BBM/?X-Search-Id=aeeaee23c7f5dc086aff&X-Product-Id=6033456&X-Search-Page=1&X-Search-Position=1&X-Section=search&X-MB=0&X-Search-Action=view",
+                "price": 466.45
+            },
+            {
+                "seller": "evomag",
+                "url": "https://www.evomag.ro/componente-pc-gaming-surse/seasonic-sursa-seasonic-focus-gx-550-550w-gold-full-modulara-3762574.html",
+                "price": 460.99
+            }
+        ]
+    },
+    {
+        "id": 23,
+        "name": "Corsair CV650",
+        "power": "650 W",
+        "efficiency": "88%",
+        "certification": "80+ Bronze",
+        "dimensions": "150 x 125 x 86 mm",
+        "prices": [
+            {
+                "seller": "pcgarage",
+                "url": "https://www.pcgarage.ro/surse/corsair/cv650-80-plus-bronze-650w-x/",
+                "price": 311.93
+            },
+            {
+                "seller": "emag",
+                "url": "https://www.emag.ro/sursa-corsair-cv-seriestm-cv650-80-plusr-bronze-650-w-negru-cp-9020211-eu/pd/DK9X0WBBM/?X-Search-Id=8c8b59a80f09a9778359&X-Product-Id=58788729&X-Search-Page=1&X-Search-Position=0&X-Section=search&X-MB=0&X-Search-Action=view",
+                "price": 474.51
+            },
+            {
+                "seller": "evomag",
+                "url": "https://www.evomag.ro/componente-pc-gaming-surse/corsair-sursa-corsair-cv650-80-bronze-650w-3804345.html",
+                "price": 299.00
+            }
+        ]
+    }
+]

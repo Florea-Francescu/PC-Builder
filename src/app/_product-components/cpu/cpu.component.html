@@ -1,0 +1,12 @@
+<div class="container" *ngIf="cpu">
+    <h3>{{ cpu.name }}</h3>
+    <h5>Details</h5>
+    <ul class="list-group list-group-flush">
+        <li class="list-group-item">Socket: {{ cpu.socket }}</li>
+        <li class="list-group-item">Number of Cores: {{ cpu.cores }}</li>
+        <li class="list-group-item">Number of Threads: {{ cpu.threads }}</li>
+        <li class="list-group-item">Frequency: {{ cpu.frequency }}</li>
+    </ul>
+
+    <app-prices-display [prices]="cpu.prices"></app-prices-display>
+</div>
