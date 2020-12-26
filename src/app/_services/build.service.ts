@@ -49,9 +49,17 @@ export class BuildService { /////TODO: add incomapatibility checks for the build
     this.build.cpu = cpu;
   }
 
+  removeCPU() {
+    this.build.cpu = null;
+  }
+
   //Motherboard
   setMotherboard(motherboard: Motherboard) {
     this.build.motherboard = motherboard;
+  }
+
+  removeMotherboard() {
+    this.build.motherboard = null;
   }
 
   //Memory
@@ -89,13 +97,25 @@ export class BuildService { /////TODO: add incomapatibility checks for the build
     this.build.gpu = gpu;
   }
 
+  removeGPU() {
+    this.build.gpu = null;
+  }
+
   //Case
   setCase(_case: Case) {
     this.build._case = _case;
   }
 
+  removeCase() {
+    this.build._case = null;
+  }
+
   //PSU
   setPSU(psu: PSU) {
     this.build.psu = psu;
+  }
+
+  removePSU() {
+    this.build.psu = null;
   }
 }
