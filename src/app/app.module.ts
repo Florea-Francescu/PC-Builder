@@ -4,6 +4,11 @@ import { FormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
 
+import { AngularFireDatabaseModule } from '@angular/fire/database';
+import { AngularFireModule } from '@angular/fire';
+import { AngularFireAuthModule } from '@angular/fire/auth';
+import { environment } from 'src/environments/environment';
+
 import { AppComponent } from './app.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { ConfiguratorComponent } from './configurator/configurator.component';
@@ -31,6 +36,7 @@ import { CaseComponent } from './_product-components/case/case.component';
 import { PsusComponent } from './_product-components/psus/psus.component';
 import { PsuComponent } from './_product-components/psu/psu.component';
 import { ConfiguratorProductComponent } from './configurator-product/configurator-product.component';
+import { AuthenticationService } from './_services/authentication.service';
 
 @NgModule({
   declarations: [
@@ -63,6 +69,9 @@ import { ConfiguratorProductComponent } from './configurator-product/configurato
     BrowserModule,
     NgbModule,
     FormsModule,
+    AngularFireModule.initializeApp(environment.firebase),
+    AngularFireDatabaseModule,
+    AngularFireAuthModule,
     RouterModule.forRoot(
       [
         { path: '', component: InfoComponent },
@@ -90,7 +99,8 @@ import { ConfiguratorProductComponent } from './configurator-product/configurato
   ],
   providers: [
     ProductsService,
-    PricesService
+    PricesService,
+    AuthenticationService
   ],
   bootstrap: [AppComponent]
 })
