@@ -30,6 +30,7 @@ import { CasesComponent } from './_product-components/cases/cases.component';
 import { CaseComponent } from './_product-components/case/case.component';
 import { PsusComponent } from './_product-components/psus/psus.component';
 import { PsuComponent } from './_product-components/psu/psu.component';
+import { ConfiguratorProductComponent } from './configurator-product/configurator-product.component';
 
 @NgModule({
   declarations: [
@@ -55,7 +56,8 @@ import { PsuComponent } from './_product-components/psu/psu.component';
     CasesComponent,
     CaseComponent,
     PsusComponent,
-    PsuComponent
+    PsuComponent,
+    ConfiguratorProductComponent
   ],
   imports: [
     BrowserModule,

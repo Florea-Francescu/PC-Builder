@@ -1,103 +1,13 @@
 <!-- TODO: add a way to display the components that are currently picked AND a way to remove them -->
 
 <div class="content">
-    <div class="card category required">
-        <div class="card-body">
-            <h5 class="card-title text-center">CPU</h5>
-            <a [routerLink]="['/cpus']" class="btn btn-primary btn-block">
-                <span class="material-icons align-text-bottom">
-                    add
-                </span>
-                Pick CPU
-            </a>
-        </div>
-    </div>
-    <div class="card category required">
-        <div class="card-body">
-            <h5 class="card-title text-center">Motherboard</h5>
-            <a [routerLink]="['/motherboards']" class="btn btn-primary btn-block">
-                <span class="material-icons align-text-bottom">
-                    add
-                </span>
-                Pick Motherboard
-            </a>
-        </div>
-    </div>
-    <div class="card category required">
-        <div class="card-body">
-            <h5 class="card-title text-center">Memory</h5>
-            <a [routerLink]="['/memories']" class="btn btn-primary btn-block">
-                <span class="material-icons align-text-bottom">
-                    add
-                </span>
-                Pick Memory
-            </a>
-        </div>
-    </div>
-    <div class="card category required">
-        <div class="card-body">
-            <h5 class="card-title text-center">Storage</h5>
-            <a [routerLink]="['/storages']" class="btn btn-primary btn-block">
-                <span class="material-icons align-text-bottom">
-                    add
-                </span>
-                Pick Storage
-            </a>
-        </div>
-    </div>
-    <div class="card category required">
-        <div class="card-body">
-            <h5 class="card-title text-center">GPU</h5>
-            <a [routerLink]="['/gpus']" class="btn btn-primary btn-block">
-                <span class="material-icons align-text-bottom">
-                    add
-                </span>
-                Pick GPU
-            </a>
-        </div>
-    </div>
-    <div class="card category required">
-        <div class="card-body">
-            <h5 class="card-title text-center">Case</h5>
-            <a [routerLink]="['/cases']" class="btn btn-primary btn-block">
-                <span class="material-icons align-text-bottom">
-                    add
-                </span>
-                Pick Case
-            </a>
-        </div>
-    </div>
-    <div class="card category required">
-        <div class="card-body">
-            <h5 class="card-title text-center">PSU</h5>
-            <a [routerLink]="['/psus']" class="btn btn-primary btn-block">
-                <span class="material-icons align-text-bottom">
-                    add
-                </span>
-                Pick PSU
-            </a>
-        </div>
-    </div>
-    <div class="card category not-required">
-        <div class="card-body">
-            <h5 class="card-title text-center">CPU Cooler</h5>
-            <a href="#" class="btn btn-primary btn-block">
-                <span class="material-icons align-text-bottom">
-                    add
-                </span>
-                Pick CPU Cooler
-            </a>
-        </div>
-    </div>
-    <div class="card category not-required">
-        <div class="card-body">
-            <h5 class="card-title text-center">Other</h5>
-            <a href="#" class="btn btn-primary btn-block">
-                <span class="material-icons align-text-bottom">
-                    add
-                </span>
-                Pick Other
-            </a>
-        </div>
-    </div>
+    <app-configurator-product [name]="'CPU'" [link]="'/cpus'"></app-configurator-product>
+    <app-configurator-product [name]="'Motherboard'" [link]="'/motherboards'"></app-configurator-product>
+    <app-configurator-product [name]="'Memory'" [link]="'/memories'"></app-configurator-product>
+    <app-configurator-product [name]="'Storage'" [link]="'/storages'"></app-configurator-product>
+    <app-configurator-product [name]="'GPU'" [link]="'/gpus'"></app-configurator-product>
+    <app-configurator-product [name]="'Case'" [link]="'/cases'"></app-configurator-product>
+    <app-configurator-product [name]="'PSU'" [link]="'/psus'"></app-configurator-product>
+    <app-configurator-product [name]="'CPU Cooler'" [link]="'/'"></app-configurator-product>
+    <app-configurator-product [name]="'Other'" [link]="'/'"></app-configurator-product>
 </div>

@@ -5,7 +5,6 @@ import { CPU } from '../data models/CPU';
 import { GPU } from '../data models/GPU';
 import { Memory } from '../data models/Memory';
 import { Motherboard } from '../data models/Motherboard';
-import { Product } from '../data models/Product';
 import { PSU } from '../data models/PSU';
 import { Storage } from '../data models/Storage';
 
@@ -28,8 +27,6 @@ export class BuildService { /////TODO: add incomapatibility checks for the build
   }
 
   getBuild() {
-    console.log(this.build);
-
     return this.build;
   }
 
