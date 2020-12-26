@@ -9,7 +9,7 @@ import { Storage } from "./Storage";
 export interface Build {
     cpu: CPU;
     motherboard: Motherboard;
-    memory: Memory;
+    memory: Memory[];
     storage: Storage[];
     gpu: GPU;
     _case: Case;
