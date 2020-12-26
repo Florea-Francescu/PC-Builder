@@ -35,8 +35,8 @@ import { CasesComponent } from './_product-components/cases/cases.component';
 import { CaseComponent } from './_product-components/case/case.component';
 import { PsusComponent } from './_product-components/psus/psus.component';
 import { PsuComponent } from './_product-components/psu/psu.component';
+import { ConfiguratorProductComponent } from './configurator-product/configurator-product.component';
 import { AuthenticationService } from './_services/authentication.service';
-
 
 @NgModule({
   declarations: [
@@ -63,7 +63,7 @@ import { AuthenticationService } from './_services/authentication.service';
     CaseComponent,
     PsusComponent,
     PsuComponent,
-    
+    ConfiguratorProductComponent
   ],
   imports: [
     BrowserModule,

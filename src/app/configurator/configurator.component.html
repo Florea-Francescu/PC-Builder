@@ -1,101 +1,117 @@
 <div class="content">
-    <div class="card category required">
-        <div class="card-body">
-            <h5 class="card-title text-center">CPU</h5>
-            <a [routerLink]="['/cpus']" class="btn btn-primary btn-block">
+    <app-configurator-product [name]="'CPU'" [link]="'/cpus'">
+        <div *ngIf="buildService.build.cpu" class="extra">
+            <p class="text-center">
+                {{ buildService.build.cpu.name }} - {{ pricesService.getLowest(buildService.build.cpu.prices).price }} ({{ pricesService.getLowest(buildService.build.cpu.prices).seller }})
+            </p>
+            <a 
+                (click)="buildService.removeCPU()"
+                class="btn btn-primary btn-block">
                 <span class="material-icons align-text-bottom">
-                    add
+                    remove
                 </span>
-                Pick CPU
+                Remove CPU
+            </a>
+        </div>  
+    </app-configurator-product>
+
+    <app-configurator-product [name]="'Motherboard'" [link]="'/motherboards'">
+        <div *ngIf="buildService.build.motherboard" class="extra">
+            <p class="text-center">
+                {{ buildService.build.motherboard.name }} - {{ pricesService.getLowest(buildService.build.motherboard.prices).price }} ({{ pricesService.getLowest(buildService.build.motherboard.prices).seller }})
+            </p>
+            <a 
+                (click)="buildService.removeMotherboard()"
+                class="btn btn-primary btn-block">
+                <span class="material-icons align-text-bottom">
+                    remove
+                </span>
+                Remove Motherboard
             </a>
         </div>
-    </div>
-    <div class="card category required">
-        <div class="card-body">
-            <h5 class="card-title text-center">Motherboard</h5>
-            <a [routerLink]="['/motherboards']" class="btn btn-primary btn-block">
+    </app-configurator-product>
+
+    <app-configurator-product [name]="'Memory'" [link]="'/memories'">
+        <div *ngIf="buildService.build.memory.length >= 1" class="extra">
+            <p *ngFor="let mem of buildService.build.memory" class="text-center">
+                {{ mem.name }} - {{ pricesService.getLowest(mem.prices).price }} ({{ pricesService.getLowest(mem.prices).seller }})
+            </p>
+            <a 
+                (click)="buildService.clearMemory()"
+                class="btn btn-primary btn-block">
                 <span class="material-icons align-text-bottom">
-                    add
+                    remove
                 </span>
-                Pick Motherboard
+                Remove Memory
             </a>
         </div>
-    </div>
-    <div class="card category required">
-        <div class="card-body">
-            <h5 class="card-title text-center">Memory</h5>
-            <a [routerLink]="['/memories']" class="btn btn-primary btn-block">
+    </app-configurator-product>
+
+    <app-configurator-product [name]="'Storage'" [link]="'/storages'">
+        <div *ngIf="buildService.build.storage.length >= 1" class="extra">
+            <p *ngFor="let sto of buildService.build.storage" class="text-center">
+                {{ sto.name }} - {{ pricesService.getLowest(sto.prices).price }} ({{ pricesService.getLowest(sto.prices).seller }})
+            </p>
+            <a 
+                (click)="buildService.clearStorage()"
+                class="btn btn-primary btn-block">
                 <span class="material-icons align-text-bottom">
-                    add
+                    remove
                 </span>
-                Pick Memory
+                Remove Storage
             </a>
         </div>
-    </div>
-    <div class="card category required">
-        <div class="card-body">
-            <h5 class="card-title text-center">Storage</h5>
-            <a [routerLink]="['/storages']" class="btn btn-primary btn-block">
+    </app-configurator-product>
+
+    <app-configurator-product [name]="'GPU'" [link]="'/gpus'">
+        <div *ngIf="buildService.build.gpu" class="extra">
+            <p *ngIf="buildService.build.gpu" class="text-center">
+                {{ buildService.build.gpu.name }} - {{ pricesService.getLowest(buildService.build.gpu.prices).price }} ({{ pricesService.getLowest(buildService.build.gpu.prices).seller }})
+            </p>
+            <a 
+                (click)="buildService.removeGPU()"
+                class="btn btn-primary btn-block">
                 <span class="material-icons align-text-bottom">
-                    add
+                    remove
                 </span>
-                Pick Storage
+                Remove GPU
             </a>
         </div>
-    </div>
-    <div class="card category required">
-        <div class="card-body">
-            <h5 class="card-title text-center">GPU</h5>
-            <a [routerLink]="['/gpus']" class="btn btn-primary btn-block">
+    </app-configurator-product>
+
+    <app-configurator-product [name]="'Case'" [link]="'/cases'">
+        <div *ngIf="buildService.build._case" class="extra">
+            <p *ngIf="buildService.build._case" class="text-center">
+                {{ buildService.build._case.name }} - {{ pricesService.getLowest(buildService.build._case.prices).price }} ({{ pricesService.getLowest(buildService.build._case.prices).seller }})
+            </p>
+            <a 
+                (click)="buildService.removeCase()"
+                class="btn btn-primary btn-block">
                 <span class="material-icons align-text-bottom">
-                    add
+                    remove
                 </span>
-                Pick GPU
+                Remove Case
             </a>
         </div>
-    </div>
-    <div class="card category required">
-        <div class="card-body">
-            <h5 class="card-title text-center">Case</h5>
-            <a [routerLink]="['/cases']" class="btn btn-primary btn-block">
+    </app-configurator-product>
+
+    <app-configurator-product [name]="'PSU'" [link]="'/psus'">
+        <div *ngIf="buildService.build.psu" class="extra">
+            <p *ngIf="buildService.build.psu" class="text-center">
+                {{ buildService.build.psu.name }} - {{ pricesService.getLowest(buildService.build.psu.prices).price }} ({{ pricesService.getLowest(buildService.build.psu.prices).seller }})
+            </p>
+            <a 
+                (click)="buildService.removePSU()"
+                class="btn btn-primary btn-block">
                 <span class="material-icons align-text-bottom">
-                    add
+                    remove
                 </span>
-                Pick Case
+                Remove PSU
             </a>
         </div>
-    </div>
-    <div class="card category required">
-        <div class="card-body">
-            <h5 class="card-title text-center">PSU</h5>
-            <a [routerLink]="['/psus']" class="btn btn-primary btn-block">
-                <span class="material-icons align-text-bottom">
-                    add
-                </span>
-                Pick PSU
-            </a>
-        </div>
-    </div>
-    <div class="card category not-required">
-        <div class="card-body">
-            <h5 class="card-title text-center">CPU Cooler</h5>
-            <a href="#" class="btn btn-primary btn-block">
-                <span class="material-icons align-text-bottom">
-                    add
-                </span>
-                Pick CPU Cooler
-            </a>
-        </div>
-    </div>
-    <div class="card category not-required">
-        <div class="card-body">
-            <h5 class="card-title text-center">Other</h5>
-            <a href="#" class="btn btn-primary btn-block">
-                <span class="material-icons align-text-bottom">
-                    add
-                </span>
-                Pick Other
-            </a>
-        </div>
-    </div>
+    </app-configurator-product>
+
+    <app-configurator-product [name]="'CPU Cooler'" [link]="'/'"></app-configurator-product>
+
+    <app-configurator-product [name]="'Other'" [link]="'/'"></app-configurator-product>
 </div>

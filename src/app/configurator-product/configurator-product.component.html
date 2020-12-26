@@ -1,0 +1,14 @@
+<div class="card">
+    <div class="card-body">
+        <h5 class="card-title text-center">{{ name }}</h5>
+
+        <ng-content></ng-content>
+
+        <a [routerLink]="[link]" class="btn btn-primary btn-block">
+            <span class="material-icons align-text-bottom">
+                add
+            </span>
+            Pick {{ name }}
+        </a>
+    </div>
+</div>

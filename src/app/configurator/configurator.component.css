@@ -1,49 +1,12 @@
 .content {
     margin: auto;
-    padding-top: 10px;
+    max-width: 60rem;
 }
 
-.category {
+app-configurator-product {
     border-radius: 0%;
 }
 
-@media (max-width: 499px) {
-    .cetegory {
-        width: 100%;
-        border-width: 0px 0px 2px 0px;
-    }
-}
-
-@media screen 
-    and (max-width: 1024px) 
-    and (min-width: 500px) {
-    .category {
-        width: 50%;
-        float: left;
-    }
-}
-
-@media screen
-    and (min-width: 1025px)
-    and (max-width: 1279px) {
-    .category {
-        float: left;
-        width: 33%;
-    }
-}
-
-@media (min-width: 1280px) {
-    .category {
-        float: left;
-        width: 33%;
-        margin: 2px;
-    }
-}
-
-.required {
-    background-color: rgb(191, 253, 255);
-}
-
-.not-required {
-    background-color: rgb(200, 255, 200);
+.extra {
+    padding-bottom: 10px;
 }
