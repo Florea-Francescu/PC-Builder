@@ -31,9 +31,10 @@ export class BuildService { /////TODO: add incomapatibility checks for the build
   }
 
   addProduct(product: any, type: string) {
+    console.log(type);
     switch (type) {
       case "CPU": this.setCPU(product); break;
-      case "Motherboard": this.setCPU(product); break;
+      case "Motherboard": this.setMotherboard(product); break;
       case "Memory": this.addMemory(product); break;
       case "Storage": this.addStorage(product); break;
       case "GPU": this.setGPU(product); break;

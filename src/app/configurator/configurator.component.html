@@ -1,13 +1,45 @@
-<!-- TODO: add a way to display the components that are currently picked AND a way to remove them -->
+<!-- TODO: add a way to remove them -->
 
 <div class="content">
-    <app-configurator-product [name]="'CPU'" [link]="'/cpus'"></app-configurator-product>
-    <app-configurator-product [name]="'Motherboard'" [link]="'/motherboards'"></app-configurator-product>
-    <app-configurator-product [name]="'Memory'" [link]="'/memories'"></app-configurator-product>
-    <app-configurator-product [name]="'Storage'" [link]="'/storages'"></app-configurator-product>
-    <app-configurator-product [name]="'GPU'" [link]="'/gpus'"></app-configurator-product>
-    <app-configurator-product [name]="'Case'" [link]="'/cases'"></app-configurator-product>
-    <app-configurator-product [name]="'PSU'" [link]="'/psus'"></app-configurator-product>
+    <app-configurator-product [name]="'CPU'" [link]="'/cpus'">
+        <p *ngIf="buildService.build.cpu" class="text-center">
+            {{ buildService.build.cpu.name }} - {{ pricesService.getLowest(buildService.build.cpu.prices).price }} ({{ pricesService.getLowest(buildService.build.cpu.prices).seller }})
+        </p>
+    </app-configurator-product>
+    <app-configurator-product [name]="'Motherboard'" [link]="'/motherboards'">
+        <p *ngIf="buildService.build.motherboard" class="text-center">
+            {{ buildService.build.motherboard.name }} - {{ pricesService.getLowest(buildService.build.motherboard.prices).price }} ({{ pricesService.getLowest(buildService.build.motherboard.prices).seller }})
+        </p>
+    </app-configurator-product>
+    <app-configurator-product [name]="'Memory'" [link]="'/memories'">
+        <div *ngIf="buildService.build.memory" class="text-center">
+            <p *ngFor="let mem of buildService.build.memory">
+                {{ mem.name }} - {{ pricesService.getLowest(mem.prices).price }} ({{ pricesService.getLowest(mem.prices).seller }})
+            </p>
+        </div>
+    </app-configurator-product>
+    <app-configurator-product [name]="'Storage'" [link]="'/storages'">
+        <div *ngIf="buildService.build.storage">
+            <p *ngFor="let sto of buildService.build.storage" class="text-center">
+                {{ sto.name }} - {{ pricesService.getLowest(sto.prices).price }} ({{ pricesService.getLowest(sto.prices).seller }})
+            </p>
+        </div>
+    </app-configurator-product>
+    <app-configurator-product [name]="'GPU'" [link]="'/gpus'">
+        <p *ngIf="buildService.build.gpu" class="text-center">
+            {{ buildService.build.gpu.name }} - {{ pricesService.getLowest(buildService.build.gpu.prices).price }} ({{ pricesService.getLowest(buildService.build.gpu.prices).seller }})
+        </p>
+    </app-configurator-product>
+    <app-configurator-product [name]="'Case'" [link]="'/cases'">
+        <p *ngIf="buildService.build._case" class="text-center">
+            {{ buildService.build._case.name }} - {{ pricesService.getLowest(buildService.build._case.prices).price }} ({{ pricesService.getLowest(buildService.build._case.prices).seller }})
+        </p>
+    </app-configurator-product>
+    <app-configurator-product [name]="'PSU'" [link]="'/psus'">
+        <p *ngIf="buildService.build.psu" class="text-center">
+            {{ buildService.build.psu.name }} - {{ pricesService.getLowest(buildService.build.psu.prices).price }} ({{ pricesService.getLowest(buildService.build.psu.prices).seller }})
+        </p>
+    </app-configurator-product>
     <app-configurator-product [name]="'CPU Cooler'" [link]="'/'"></app-configurator-product>
     <app-configurator-product [name]="'Other'" [link]="'/'"></app-configurator-product>
 </div>
