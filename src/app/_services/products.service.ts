@@ -47,7 +47,7 @@ export class ProductsService {
     return of(protArr);
   }
 
-  //THIS IS NEXT
+  // THIS IS DONE
   getCPU(id: string): Observable<CPU> {
     const url = 'cpus/' + id;
     
@@ -55,7 +55,7 @@ export class ProductsService {
       .pipe(
         map(docChange => {
           let cpu: CPU;
-          
+
           cpu = docChange.payload.data() as CPU;
           cpu.id = docChange.payload.id;
 
@@ -64,99 +64,206 @@ export class ProductsService {
       );
   }
 
+  // this is done
   getMotherboards() {
-    return this.http.get<Motherboard[]>(this.motherboardsUrl);
+    let protArr: Motherboard[] = [];
+
+    this.firestore.collection<Motherboard[]>('motherboards').snapshotChanges()
+      .subscribe(docChanges => {
+        for(let docCh of docChanges) {
+          let motherboard: Motherboard = docCh.payload.doc.data() as unknown as Motherboard;
+          motherboard.id = docCh.payload.doc.id;
+
+          protArr.push(motherboard);
+        }
+      });
+
+    return of(protArr);
   }
 
+  // this is done
   getMotherboard(id: string) {
-    return this.getMotherboards().pipe(
-      map((motherboards: Motherboard[]) => {
-        for(let motherboard of motherboards) {
-          if(motherboard.id === id)
-            return motherboard;
-        }
-        throw throwError(new Error("Invalid ID"));
-      })
-    );
+    const url = 'motherboards/' + id;
+    
+    return this.firestore.doc<Motherboard>(url).snapshotChanges()
+      .pipe(
+        map(docChange => {
+          let motherboard: Motherboard;
+
+          motherboard = docChange.payload.data() as Motherboard;
+          motherboard.id = docChange.payload.id;
+
+          return motherboard;
+        })
+      );
   }
 
+  // this is done
   getMemories() {
-    return this.http.get<Memory[]>(this.memoriesUrl);
+    let protArr: Memory[] = [];
+
+    this.firestore.collection<Memory[]>('memories').snapshotChanges()
+      .subscribe(docChanges => {
+        for(let docCh of docChanges) {
+          let memory: Memory = docCh.payload.doc.data() as unknown as Memory;
+          memory.id = docCh.payload.doc.id;
+
+          protArr.push(memory);
+        }
+      });
+
+    return of(protArr);
   }
 
+  // done
   getMemory(id: string) {
-    return this.getMemories().pipe(
-      map((memories: Memory[]) => {
-        for(let memory of memories) {
-          if(memory.id === id)
-            return memory;
-        }
-        throw throwError(new Error("Invalid ID"));
-      })
-    );
+    const url = 'memories/' + id;
+    
+    return this.firestore.doc<Memory>(url).snapshotChanges()
+      .pipe(
+        map(docChange => {
+          let memory: Memory;
+
+          memory = docChange.payload.data() as Memory;
+          memory.id = docChange.payload.id;
+
+          return memory;
+        })
+      );
   }
 
+  // done
   getStorages() {
-    return this.http.get<Storage[]>(this.storagesUrl);
+    let protArr: Storage[] = [];
+
+    this.firestore.collection<Storage[]>('storages').snapshotChanges()
+      .subscribe(docChanges => {
+        for(let docCh of docChanges) {
+          let storage: Storage = docCh.payload.doc.data() as unknown as Storage;
+          storage.id = docCh.payload.doc.id;
+
+          protArr.push(storage);
+        }
+      });
+
+    return of(protArr);
   }
 
+  // done
   getStorage(id: string) {
-    return this.getStorages().pipe(
-      map((storages: Storage[]) => {
-        for(let storage of storages) {
-          if(storage.id === id)
-            return storage;
-        }
-        throw throwError(new Error("Invalid ID"));
-      })
-    );
+    const url = 'storages/' + id;
+    
+    return this.firestore.doc<Storage>(url).snapshotChanges()
+      .pipe(
+        map(docChange => {
+          let storage: Storage;
+
+          storage = docChange.payload.data() as Storage;
+          storage.id = docChange.payload.id;
+
+          return storage;
+        })
+      );
   }
 
+  // done
   getGPUs() {
-    return this.http.get<GPU[]>(this.gpusUrl);
+    let protArr: GPU[] = [];
+
+    this.firestore.collection<GPU[]>('gpus').snapshotChanges()
+      .subscribe(docChanges => {
+        for(let docCh of docChanges) {
+          let gpu: GPU = docCh.payload.doc.data() as unknown as GPU;
+          gpu.id = docCh.payload.doc.id;
+
+          protArr.push(gpu);
+        }
+      });
+
+    return of(protArr);
   }
 
+  // done
   getGPU(id: string) {
-    return this.getGPUs().pipe(
-      map((gpus: GPU[]) => {
-        for(let gpu of gpus) {
-          if(gpu.id === id)
-            return gpu;
-        }
-        throw throwError(new Error("Invalid ID"));
-      })
-    );
+    const url = 'gpus/' + id;
+    
+    return this.firestore.doc<GPU>(url).snapshotChanges()
+      .pipe(
+        map(docChange => {
+          let gpu: GPU;
+
+          gpu = docChange.payload.data() as GPU;
+          gpu.id = docChange.payload.id;
+
+          return gpu;
+        })
+      );
   }
 
+  // done
   getCases() {
-    return this.http.get<Case[]>(this.casesUrl);
-  }
+    let protArr: Case[] = [];
 
-  getCase(id: string) {
-    return this.getCases().pipe(
-      map((cases: Case[]) => {
-        for(let cs of cases) {
-          if(cs.id === id)
-            return cs;
+    this.firestore.collection<Case[]>('cases').snapshotChanges()
+      .subscribe(docChanges => {
+        for(let docCh of docChanges) {
+          let _case: Case = docCh.payload.doc.data() as unknown as Case;
+          _case.id = docCh.payload.doc.id;
+
+          protArr.push(_case);
         }
-        throw throwError(new Error("Invalid ID"));
-      })
-    );
+      });
+
+    return of(protArr);
   }
 
+  // done
+  getCase(id: string) {
+    const url = 'cases/' + id;
+    
+    return this.firestore.doc<Case>(url).snapshotChanges()
+      .pipe(
+        map(docChange => {
+          let _case: Case;
+
+          _case = docChange.payload.data() as Case;
+          _case.id = docChange.payload.id;
+
+          return _case;
+        })
+      );
+  }
+
+  // done
   getPSUs() {
-    return this.http.get<PSU[]>(this.psusUrl);
+    let protArr: PSU[] = [];
+
+    this.firestore.collection<PSU[]>('psus').snapshotChanges()
+      .subscribe(docChanges => {
+        for(let docCh of docChanges) {
+          let psu: PSU = docCh.payload.doc.data() as unknown as PSU;
+          psu.id = docCh.payload.doc.id;
+
+          protArr.push(psu);
+        }
+      });
+
+    return of(protArr);
   }
 
   getPSU(id: string) {
-    return this.getPSUs().pipe(
-      map((psus: PSU[]) => {
-        for(let psu of psus) {
-          if(psu.id === id)
-            return psu;
-        }
-        throw throwError(new Error("Invalid ID"));
-      })
-    );
+    const url = 'psus/' + id;
+    
+    return this.firestore.doc<PSU>(url).snapshotChanges()
+      .pipe(
+        map(docChange => {
+          let psu: PSU;
+
+          psu = docChange.payload.data() as PSU;
+          psu.id = docChange.payload.id;
+
+          return psu;
+        })
+      );
   }
 }
