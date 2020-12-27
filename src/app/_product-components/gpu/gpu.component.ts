@@ -19,7 +19,7 @@ export class GpuComponent implements OnInit {
   ngOnInit(): void {
     const id = this.route.snapshot.paramMap.get("id");
 
-    this.productsService.getGPU(+id)
+    this.productsService.getGPU(id)
       .subscribe(gpu => this.gpu = gpu);
   }
 

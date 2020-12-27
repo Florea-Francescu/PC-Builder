@@ -1,7 +1,7 @@
 import { Price } from "./Price";
 
 export interface Product {
-    id: number;
+    id: string;
     name: string;
     prices: Price[];
 }

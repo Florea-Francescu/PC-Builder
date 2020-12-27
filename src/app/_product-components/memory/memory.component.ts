@@ -19,7 +19,7 @@ export class MemoryComponent implements OnInit {
   ngOnInit(): void {
     const id = this.route.snapshot.paramMap.get('id');
 
-    this.productsService.getMemory(+id)
+    this.productsService.getMemory(id)
       .subscribe(memory => this.memory = memory);
   }
 

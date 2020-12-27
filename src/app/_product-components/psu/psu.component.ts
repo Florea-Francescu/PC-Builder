@@ -19,7 +19,7 @@ export class PsuComponent implements OnInit {
   ngOnInit(): void {
     const id = this.route.snapshot.paramMap.get('id');
 
-    this.productsService.getPSU(+id)
+    this.productsService.getPSU(id)
       .subscribe(psu => this.psu = psu);
   }
 

@@ -2,6 +2,8 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable, of, throwError } from 'rxjs';
 import { catchError, filter, map, retry } from 'rxjs/operators';
+import { AngularFirestore } from '@angular/fire/firestore';
+
 import { CPU } from '../data models/CPU';
 import { Motherboard } from '../data models/Motherboard';
 import { Memory } from '../data models/Memory';
@@ -9,6 +11,7 @@ import { Storage } from '../data models/Storage';
 import { GPU } from '../data models/GPU';
 import { Case } from '../data models/Case';
 import { PSU } from '../data models/PSU';
+import { CpuComponent } from '../_product-components/cpu/cpu.component';
 
 @Injectable({
   providedIn: 'root'
@@ -23,30 +26,49 @@ export class ProductsService {
   psusUrl = "assets/psu.json";
 
   constructor(
-    private http: HttpClient
+    private http: HttpClient,
+    private firestore: AngularFirestore
   ) { }
 
+  // THIS IS DONE
   getCPUs() {
-    return this.http.get<CPU[]>(this.cpusUrl);
+    let protArr: CPU[] = [];
+
+    this.firestore.collection<CPU[]>('cpus').snapshotChanges()
+      .subscribe(docChanges => {
+        for(let docCh of docChanges) {
+          let cpu: CPU = docCh.payload.doc.data() as unknown as CPU;
+          cpu.id = docCh.payload.doc.id;
+
+          protArr.push(cpu);
+        }
+      });
+
+    return of(protArr);
   }
 
-  getCPU(id: number): Observable<CPU> {
-    return this.getCPUs().pipe(
-      map((cpus: CPU[]) => {
-        for(let cpu of cpus) {
-          if(cpu.id === id)
-            return cpu;
-        }
-        throw throwError(new Error("Invalid ID"));
-      })
-    );
+  //THIS IS NEXT
+  getCPU(id: string): Observable<CPU> {
+    const url = 'cpus/' + id;
+    
+    return this.firestore.doc<CPU>(url).snapshotChanges()
+      .pipe(
+        map(docChange => {
+          let cpu: CPU;
+          
+          cpu = docChange.payload.data() as CPU;
+          cpu.id = docChange.payload.id;
+
+          return cpu;
+        })
+      );
   }
 
   getMotherboards() {
     return this.http.get<Motherboard[]>(this.motherboardsUrl);
   }
 
-  getMotherboard(id: number) {
+  getMotherboard(id: string) {
     return this.getMotherboards().pipe(
       map((motherboards: Motherboard[]) => {
         for(let motherboard of motherboards) {
@@ -62,7 +84,7 @@ export class ProductsService {
     return this.http.get<Memory[]>(this.memoriesUrl);
   }
 
-  getMemory(id: number) {
+  getMemory(id: string) {
     return this.getMemories().pipe(
       map((memories: Memory[]) => {
         for(let memory of memories) {
@@ -78,7 +100,7 @@ export class ProductsService {
     return this.http.get<Storage[]>(this.storagesUrl);
   }
 
-  getStorage(id: number) {
+  getStorage(id: string) {
     return this.getStorages().pipe(
       map((storages: Storage[]) => {
         for(let storage of storages) {
@@ -94,7 +116,7 @@ export class ProductsService {
     return this.http.get<GPU[]>(this.gpusUrl);
   }
 
-  getGPU(id: number) {
+  getGPU(id: string) {
     return this.getGPUs().pipe(
       map((gpus: GPU[]) => {
         for(let gpu of gpus) {
@@ -110,7 +132,7 @@ export class ProductsService {
     return this.http.get<Case[]>(this.casesUrl);
   }
 
-  getCase(id: number) {
+  getCase(id: string) {
     return this.getCases().pipe(
       map((cases: Case[]) => {
         for(let cs of cases) {
@@ -126,7 +148,7 @@ export class ProductsService {
     return this.http.get<PSU[]>(this.psusUrl);
   }
 
-  getPSU(id: number) {
+  getPSU(id: string) {
     return this.getPSUs().pipe(
       map((psus: PSU[]) => {
         for(let psu of psus) {
