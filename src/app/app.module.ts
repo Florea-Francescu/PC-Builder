@@ -37,6 +37,7 @@ import { PsusComponent } from './_product-components/psus/psus.component';
 import { PsuComponent } from './_product-components/psu/psu.component';
 import { ConfiguratorProductComponent } from './configurator-product/configurator-product.component';
 import { AuthenticationService } from './_services/authentication.service';
+import { MyBuildsComponent } from './my-builds/my-builds.component';
 
 @NgModule({
   declarations: [
@@ -63,7 +64,8 @@ import { AuthenticationService } from './_services/authentication.service';
     CaseComponent,
     PsusComponent,
     PsuComponent,
-    ConfiguratorProductComponent
+    ConfiguratorProductComponent,
+    MyBuildsComponent
   ],
   imports: [
     BrowserModule,
@@ -77,6 +79,7 @@ import { AuthenticationService } from './_services/authentication.service';
         { path: '', component: InfoComponent },
         { path: 'login', component: LoginComponent },
         { path: 'signup', component: SignupComponent },
+        { path: 'my-builds', component: MyBuildsComponent },
         { path: 'configurator', component: ConfiguratorComponent },
         { path: 'builds', component: BuildsComponent },
         { path: 'cpu/:id', component: CpuComponent },
