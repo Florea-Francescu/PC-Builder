@@ -19,7 +19,7 @@ export class MotherboardComponent implements OnInit {
   ngOnInit(): void {
     const id = this.route.snapshot.paramMap.get('id');
 
-    this.productsService.getMotherboard(+id)
+    this.productsService.getMotherboard(id)
       .subscribe(motherboard => this.motherboard = motherboard);
   }
 

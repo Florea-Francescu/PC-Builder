@@ -111,15 +111,16 @@
         </div>
     </app-configurator-product>
 
-    <app-configurator-product [name]="'CPU Cooler'" [link]="'/'"></app-configurator-product>
+    <app-configurator-product [name]="'CPU Cooler'" [link]="'/coolers'"></app-configurator-product>
 
-    <app-configurator-product [name]="'Other'" [link]="'/'"></app-configurator-product>
+    <app-configurator-product [name]="'Other'" [link]="'/others'"></app-configurator-product>
     
-</div>
 <div class="container">
     
     <a *ngIf="authService.loginStatus()" (click)="buildService.saveBuild(buildService.build)" class="btn btn-primary btn-block">
         Submit
     </a>
         
+    
+
 </div>

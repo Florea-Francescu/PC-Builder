@@ -1,0 +1,136 @@
+[
+    {
+        "name": "Floston Halo Rainbow Dual",
+        "type": "Fan",
+        "details": [
+            {
+                "key": "Dimensions",
+                "value": "120 x 120 x 25 mm"
+            },
+            {
+                "key": "Color",
+                "value": "black"
+            },
+            {
+                "key": "Rotation Speed",
+                "value": "1200 RPM"
+            },
+            {
+                "key": "Noise Level",
+                "value": "22 dBA"
+            },
+            {
+                "key": "Connector",
+                "value": "Molex"
+            }
+        ],
+        "prices": [
+            {
+                "seller": "pcgarage",
+                "url": "https://www.pcgarage.ro/ventilatoare-radiatoare/floston/halo-rainbow-dual-rgb/",
+                "price": 29.72
+            },
+            {
+                "seller": "emag",
+                "url": "https://www.emag.ro/ventilator-floston-halo-rainbow-dual-rgb-1200-rpm-120mm-halorainbowdualrgb/pd/D7SYSWBBM/?X-Search-Id=0c9e6999da366e1002f5&X-Product-Id=55220047&X-Search-Page=1&X-Search-Position=0&X-Section=search&X-MB=0&X-Search-Action=view",
+                "price": 33.00
+            },
+            {
+                "seller": "evomag",
+                "url": "https://www.evomag.ro/componente-pc-gaming-coolere-ventilatoare/floston-ventilator-floston-halo-rainbow-dual-rgb-120mm-3782619.html",
+                "price": 31.77
+            }
+        ]
+    },
+    {
+        "name": "Floston Halo Rainbow Dual",
+        "type": "Fan",
+        "details": [
+            {
+                "key": "Dimensions",
+                "value": "120 x 120 x 25 mm"
+            },
+            {
+                "key": "Color",
+                "value": "black"
+            },
+            {
+                "key": "Rotation Speed",
+                "value": "1200 RPM"
+            },
+            {
+                "key": "Noise Level",
+                "value": "22 dBA"
+            },
+            {
+                "key": "Connector",
+                "value": "Molex"
+            }
+        ],
+        "prices": [
+            {
+                "seller": "pcgarage",
+                "url": "https://www.pcgarage.ro/ventilatoare-radiatoare/floston/halo-rainbow-dual-rgb/",
+                "price": 29.72
+            },
+            {
+                "seller": "emag",
+                "url": "https://www.emag.ro/ventilator-floston-halo-rainbow-dual-rgb-1200-rpm-120mm-halorainbowdualrgb/pd/D7SYSWBBM/?X-Search-Id=0c9e6999da366e1002f5&X-Product-Id=55220047&X-Search-Page=1&X-Search-Position=0&X-Section=search&X-MB=0&X-Search-Action=view",
+                "price": 33.00
+            },
+            {
+                "seller": "evomag",
+                "url": "https://www.evomag.ro/componente-pc-gaming-coolere-ventilatoare/floston-ventilator-floston-halo-rainbow-dual-rgb-120mm-3782619.html",
+                "price": 31.77
+            }
+        ]
+    },
+    {
+        "name": "Kit Dual ARGB LED-Strip AQIRYS Taurus",
+        "type": "LED",
+        "details": [
+            {
+                "key": "Length",
+                "value": "35 cm"
+            }
+        ],
+        "prices": [
+            {
+                "seller": "pcgarage",
+                "url": "https://www.pcgarage.ro/modding/aqirys/kit-dual-argb-led-strip-aqirys-taurus/",
+                "price": 99.99
+            },
+            {
+                "seller": "evomag",
+                "url": "https://www.evomag.ro/componente-pc-gaming-periferice/aqirys-kit-dual-argb-led-strip-aqirys-taurus-3803413.html",
+                "price": 101.99
+            }
+        ]
+    },
+    {
+        "name": "Corsair Hydro X Series XR7 240mm Radiator",
+        "type": "Radiator",
+        "details": [
+            {
+                "key": "Dimensions",
+                "value": "275 x 120 x 55 mm"
+            },
+            {
+                "key": "Weight",
+                "value": "930g"
+            }
+        ],
+        "prices": [
+            {
+                "seller": "pcgarage",
+                "url": "https://www.pcgarage.ro/watercooling/corsair/hydro-x-series-xr7-240mm-radiator/",
+                "price": 309.15
+            },
+            {
+                "seller": "emag",
+                "url": "https://www.emag.ro/radiator-corsair-xr7-240mm-hydro-x-series-cx-9030004-ww/pd/D58NQQBBM/?X-Search-Id=1854672ffe6f153334a9&X-Product-Id=44886733&X-Search-Page=1&X-Search-Position=3&X-Section=search&X-MB=0&X-Search-Action=view",
+                "price": 280.00
+            }
+        ]
+    }
+]
