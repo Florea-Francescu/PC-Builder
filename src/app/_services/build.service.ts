@@ -11,6 +11,7 @@ import { AngularFirestore } from '@angular/fire/firestore';
 import { UserBuild } from '../data models/UserBuild';
 import { AngularFireAuth } from '@angular/fire/auth';
 import * as firebase from 'firebase';
+import { PricesService } from './prices.service';
 
 @Injectable({
   providedIn: 'root'
@@ -19,7 +20,7 @@ export class BuildService { /////TODO: add incomapatibility checks for the build
   build: Build;
 
 
-  constructor(private firestore: AngularFirestore, private af: AngularFireAuth) {
+  constructor(private firestore: AngularFirestore, private af: AngularFireAuth, private pricesService: PricesService) {
     this.build = {
       "cpu": null,
       "motherboard": null,
@@ -133,15 +134,21 @@ export class BuildService { /////TODO: add incomapatibility checks for the build
        uid: user.uid,
        build: this.build,
        date: year + "/" + month + "/" + day,
-       buildid: "Build " + Math.floor(Math.random() * 11)
+       buildid: "Build " + Math.floor(Math.random() * 11),
+       total:   this.pricesService.getLowest(this.build.cpu.prices).price + 
+                this.pricesService.getLowest(this.build.motherboard.prices).price +
+                this.pricesService.getLowest(this.build.psu.prices).price +
+                this.pricesService.getLowest(this.build.storage[0].prices).price + 
+                this.pricesService.getLowest(this.build.memory[0].prices).price + 
+                this.pricesService.getLowest(this.build._case.prices).price + 
+                this.pricesService.getLowest(this.build.gpu.prices).price
      });
    });
   }
   getUserBuilds(){
      return this.firestore.collection('/builds', ref => ref.where('uid', '==', firebase.default.auth().currentUser.uid
     
-     )).valueChanges();
-    //return this.firestore.collection('/builds').valueChanges(); 
+     )).valueChanges(); 
   }
   
 

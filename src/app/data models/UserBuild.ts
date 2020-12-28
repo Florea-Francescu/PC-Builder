@@ -5,4 +5,5 @@ export interface UserBuild{
     build: Build;
     date: string;
     buildid: string;
+    total: number;
 }
