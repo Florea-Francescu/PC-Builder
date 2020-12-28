@@ -19,7 +19,7 @@ export class CaseComponent implements OnInit {
   ngOnInit(): void {
     const id = this.route.snapshot.paramMap.get("id");
 
-    this.productsService.getCase(+id)
+    this.productsService.getCase(id)
       .subscribe(cs => this.cs = cs);
   }
 

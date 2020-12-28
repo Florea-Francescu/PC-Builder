@@ -1,0 +1,11 @@
+<div class="container" *ngIf="cooler">
+    <h3>{{ cooler.name }}</h3>
+    <h5>Details</h5>
+    <ul class="list-group list-group-flush">
+        <li class="list-group-item">Fan Size: {{ cooler.fanSize }}</li>
+        <li class="list-group-item">Height: {{ cooler.height }}</li>
+        <li class="list-group-item">Supported CPU Sockets: {{ cooler.sockets }}</li>
+    </ul>
+
+    <app-prices-display [prices]="cooler.prices"></app-prices-display>
+</div>

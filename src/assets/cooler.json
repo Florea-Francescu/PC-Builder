@@ -1,0 +1,80 @@
+[
+    {
+        "name": "Noctua NH-D15 Chromax.Black",
+        "fanSize": "140 mm",
+        "height": "165 mm",
+        "sockets": [
+            "Intel LGA 1150", "Intel LGA 1151", "Intel LGA 1155", "Intel LGA 1156", "Intel LGA 1200", "Intel LGA 2011", "Intel LGA 2011-3", "Intel LGA 2066",
+            "AMD AM2", "AMD AM2+", "AMD AM3", "AMD AM3+", "AMD AM4", "AMD FM2"
+        ],
+        "prices": [
+            {
+                "seller": "pcgarage",
+                "url": "https://www.pcgarage.ro/coolere/noctua/nh-d15-chromaxblack/",
+                "price": 519.32
+            },
+            {
+                "seller": "emag",
+                "url": "https://www.emag.ro/cooler-procesor-noctua-nh-d15-chromax-black-compatibil-amd-intel-cpntd15chbk/pd/DNN7BGBBM/?X-Search-Id=3ea72e1460496d0241f4&X-Product-Id=60227914&X-Search-Page=1&X-Search-Position=0&X-Section=search&X-MB=0&X-Search-Action=view",
+                "price": "500.55"
+            },
+            {
+                "seller": "evomag",
+                "url": "https://www.evomag.ro/componente-pc-gaming-coolere-coolere-cpu/noctua-cooler-cpu-noctua-nh-d15-chromax-2-x-140mm-3797816.html",
+                "price": 629.99
+            }
+        ]
+    },
+    {
+        "name": "Deepcool GAMMAXX 300",
+        "fanSize": "120 mm",
+        "height": "135.7 mm",
+        "sockets": [
+            "Intel LGA 775", "Intel LGA 1150", "Intel LGA 1151", "Intel LGA 1155", "Intel LGA 1156", "Intel LGA 1200", "Intel LGA 1366",
+            "AMD 754", "AMD 939", "AMD 940", "AMD AM2", "AMD AM2+", "AMD AM3", "AMD AM3+", "AMD AM4", "AMD FM1", "AMD FM2"
+        ],
+        "prices": [
+            {
+                "seller": "pcgarage",
+                "url": "https://www.pcgarage.ro/coolere/deepcool/gammaxx300/",
+                "price": 71.32
+            },
+            {
+                "seller": "emag",
+                "url": "https://www.emag.ro/cooler-procesor-deepcool-gammaxx-300-120mm-compatibil-intel-amd-dp-gamxx300/pd/D8DLJMBBM/?X-Search-Id=32349e1102deaa58ffa8&X-Product-Id=13634668&X-Search-Page=1&X-Search-Position=1&X-Section=search&X-MB=0&X-Search-Action=view",
+                "price": 110.98
+            },
+            {
+                "seller": "evomag",
+                "url": "https://www.evomag.ro/componente-pc-gaming-coolere-coolere-cpu/deepcool-cooler-cpu-gammaxx-300-86660.html",
+                "price": 96.99
+            }
+        ]
+    },
+    {
+        "name": "Noctua NH-D14",
+        "fanSize": "120 mm",
+        "height": "160 mm",
+        "sockets": [
+            "Intel LG775", "Intel LGA 1150", "Intel LGA 1151", "Intel LGA 1155", "Intel LGA 1156", "Intel LGA 1200", "Intel LGA 1366",
+            "AMD AM2", "AMD AM2+", "AMD AM3", "AMD AM3+", "AMD AM4", "AMD FM1", "AMD FM2", "AMD FM2+"
+        ],
+        "prices": [
+            {
+                "seller": "pcgarage",
+                "url": "https://www.pcgarage.ro/coolere/noctua/nh-d14/",
+                "price": 348.61
+            },
+            {
+                "seller": "emag",
+                "url": "https://www.emag.ro/cooler-procesor-noctua-nh-d14-compatibil-intel-amd-nct028/pd/EBSN2BBBM/?X-Search-Id=02e8ce5d2146546826e3&X-Product-Id=128340&X-Search-Page=1&X-Search-Position=0&X-Section=search&X-MB=0&X-Search-Action=view",
+                "price": 439.99
+            },
+            {
+                "seller": "evomag",
+                "url": "https://www.evomag.ro/componente-pc-gaming-coolere-coolere-cpu/noctua-cooler-cpu-nh-d14dual-fan-62127.html",
+                "price": 446.99
+            }
+        ]
+    }
+]

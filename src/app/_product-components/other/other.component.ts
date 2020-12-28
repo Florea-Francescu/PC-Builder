@@ -1,26 +1,26 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { PSU } from 'src/app/data models/PSU';
+import { Other } from 'src/app/data models/Other';
 import { ProductsService } from 'src/app/_services/products.service';
 
 @Component({
-  selector: 'app-psu',
-  templateUrl: './psu.component.html',
-  styleUrls: ['./psu.component.css']
+  selector: 'app-other',
+  templateUrl: './other.component.html',
+  styleUrls: ['./other.component.css']
 })
-export class PsuComponent implements OnInit {
-  psu: PSU;
+export class OtherComponent implements OnInit {
+  other: Other;
 
   constructor(
     private productsService: ProductsService,
-    private route: ActivatedRoute
+    private route: ActivatedRoute 
   ) { }
 
   ngOnInit(): void {
     const id = this.route.snapshot.paramMap.get('id');
 
-    this.productsService.getPSU(id)
-      .subscribe(psu => this.psu = psu);
+    this.productsService.getOther(id)
+      .subscribe(other => this.other = other);
   }
 
 }

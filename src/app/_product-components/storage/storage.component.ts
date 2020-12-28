@@ -19,7 +19,7 @@ export class StorageComponent implements OnInit {
   ngOnInit(): void {
     const id = this.route.snapshot.paramMap.get('id');
 
-    this.productsService.getStorage(+id)
+    this.productsService.getStorage(id)
       .subscribe(storage => this.storage = storage);
   }
 

@@ -19,9 +19,10 @@ export class CpuComponent implements OnInit {
   ngOnInit(): void {
     const id = this.route.snapshot.paramMap.get('id');
 
-    this.productsService.getCPU(+id)
+    this.productsService.getCPU(id)
       .subscribe((cpu: CPU) => {
         this.cpu = cpu;
+        console.log(cpu);
       },
       error => {
         console.log("Couldn't get CPU!");

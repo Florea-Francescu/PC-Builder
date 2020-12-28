@@ -37,6 +37,10 @@ import { PsusComponent } from './_product-components/psus/psus.component';
 import { PsuComponent } from './_product-components/psu/psu.component';
 import { ConfiguratorProductComponent } from './configurator-product/configurator-product.component';
 import { AuthenticationService } from './_services/authentication.service';
+import { CoolersComponent } from './_product-components/coolers/coolers.component';
+import { CoolerComponent } from './_product-components/cooler/cooler.component';
+import { OthersComponent } from './_product-components/others/others.component';
+import { OtherComponent } from './_product-components/other/other.component';
 
 @NgModule({
   declarations: [
@@ -63,7 +67,11 @@ import { AuthenticationService } from './_services/authentication.service';
     CaseComponent,
     PsusComponent,
     PsuComponent,
-    ConfiguratorProductComponent
+    ConfiguratorProductComponent,
+    CoolersComponent,
+    CoolerComponent,
+    OthersComponent,
+    OtherComponent
   ],
   imports: [
     BrowserModule,
@@ -92,7 +100,11 @@ import { AuthenticationService } from './_services/authentication.service';
         { path: "case/:id", component: CaseComponent },
         { path: "cases", component: CasesComponent },
         { path: "psu/:id", component: PsuComponent },
-        { path: "psus", component: PsusComponent }
+        { path: "psus", component: PsusComponent },
+        { path: "cooler/:id", component: CoolerComponent },
+        { path: "coolers", component: CoolersComponent },
+        { path: "other/:id", component: OtherComponent },
+        { path: "others", component: OthersComponent }
       ]
     ),
     HttpClientModule
