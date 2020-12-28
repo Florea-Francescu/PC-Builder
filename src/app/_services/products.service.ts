@@ -12,6 +12,8 @@ import { GPU } from '../data models/GPU';
 import { Case } from '../data models/Case';
 import { PSU } from '../data models/PSU';
 import { CpuComponent } from '../_product-components/cpu/cpu.component';
+import { CpuCooler } from '../data models/CpuCooler';
+import { CoolerComponent } from '../_product-components/cooler/cooler.component';
 
 @Injectable({
   providedIn: 'root'
@@ -252,6 +254,38 @@ export class ProductsService {
           psu.id = docChange.payload.id;
 
           return psu;
+        })
+      );
+  }
+
+  getCoolers() {
+    let protArr: CpuCooler[] = [];
+
+    this.firestore.collection<CpuCooler[]>('coolers').snapshotChanges()
+      .subscribe(docChanges => {
+        for(let docCh of docChanges) {
+          let cooler: CpuCooler = docCh.payload.doc.data() as unknown as CpuCooler;
+          cooler.id = docCh.payload.doc.id;
+
+          protArr.push(cooler);
+        }
+      });
+
+    return of(protArr);
+  }
+
+  getCooler(id: string) {
+    const url = 'coolers/' + id;
+    
+    return this.firestore.doc<CpuCooler>(url).snapshotChanges()
+      .pipe(
+        map(docChange => {
+          let cooler: CpuCooler;
+
+          cooler = docChange.payload.data() as CpuCooler;
+          cooler.id = docChange.payload.id;
+
+          return cooler;
         })
       );
   }
