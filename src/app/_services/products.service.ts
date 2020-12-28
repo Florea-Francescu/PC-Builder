@@ -30,7 +30,8 @@ export class ProductsService {
     private firestore: AngularFirestore
   ) { }
 
-  // THIS IS DONE
+    // TODO: rest of things (cpu cooler and others)
+
   getCPUs() {
     let protArr: CPU[] = [];
 
@@ -47,7 +48,6 @@ export class ProductsService {
     return of(protArr);
   }
 
-  // THIS IS DONE
   getCPU(id: string): Observable<CPU> {
     const url = 'cpus/' + id;
     
@@ -64,7 +64,6 @@ export class ProductsService {
       );
   }
 
-  // this is done
   getMotherboards() {
     let protArr: Motherboard[] = [];
 
@@ -81,7 +80,6 @@ export class ProductsService {
     return of(protArr);
   }
 
-  // this is done
   getMotherboard(id: string) {
     const url = 'motherboards/' + id;
     
@@ -98,7 +96,6 @@ export class ProductsService {
       );
   }
 
-  // this is done
   getMemories() {
     let protArr: Memory[] = [];
 
@@ -115,7 +112,6 @@ export class ProductsService {
     return of(protArr);
   }
 
-  // done
   getMemory(id: string) {
     const url = 'memories/' + id;
     
@@ -132,7 +128,6 @@ export class ProductsService {
       );
   }
 
-  // done
   getStorages() {
     let protArr: Storage[] = [];
 
@@ -149,7 +144,6 @@ export class ProductsService {
     return of(protArr);
   }
 
-  // done
   getStorage(id: string) {
     const url = 'storages/' + id;
     
@@ -166,7 +160,6 @@ export class ProductsService {
       );
   }
 
-  // done
   getGPUs() {
     let protArr: GPU[] = [];
 
@@ -183,7 +176,6 @@ export class ProductsService {
     return of(protArr);
   }
 
-  // done
   getGPU(id: string) {
     const url = 'gpus/' + id;
     
@@ -200,7 +192,6 @@ export class ProductsService {
       );
   }
 
-  // done
   getCases() {
     let protArr: Case[] = [];
 
@@ -217,7 +208,6 @@ export class ProductsService {
     return of(protArr);
   }
 
-  // done
   getCase(id: string) {
     const url = 'cases/' + id;
     
@@ -234,7 +224,6 @@ export class ProductsService {
       );
   }
 
-  // done
   getPSUs() {
     let protArr: PSU[] = [];
 
