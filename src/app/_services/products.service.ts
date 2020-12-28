@@ -14,6 +14,7 @@ import { PSU } from '../data models/PSU';
 import { CpuComponent } from '../_product-components/cpu/cpu.component';
 import { CpuCooler } from '../data models/CpuCooler';
 import { CoolerComponent } from '../_product-components/cooler/cooler.component';
+import { Other } from '../data models/Other';
 
 @Injectable({
   providedIn: 'root'
@@ -286,6 +287,38 @@ export class ProductsService {
           cooler.id = docChange.payload.id;
 
           return cooler;
+        })
+      );
+  }
+
+  getOthers() {
+    let protArr: Other[] = [];
+
+    this.firestore.collection<Other[]>('others').snapshotChanges()
+      .subscribe(docChanges => {
+        for(let docCh of docChanges) {
+          let other: Other = docCh.payload.doc.data() as unknown as Other;
+          other.id = docCh.payload.doc.id;
+
+          protArr.push(other);
+        }
+      });
+
+    return of(protArr);
+  }
+
+  getOther(id: string) {
+    const url = 'others/' + id;
+    
+    return this.firestore.doc<Other>(url).snapshotChanges()
+      .pipe(
+        map(docChange => {
+          let other: Other;
+
+          other = docChange.payload.data() as Other;
+          other.id = docChange.payload.id;
+
+          return other;
         })
       );
   }

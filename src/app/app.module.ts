@@ -39,6 +39,8 @@ import { ConfiguratorProductComponent } from './configurator-product/configurato
 import { AuthenticationService } from './_services/authentication.service';
 import { CoolersComponent } from './_product-components/coolers/coolers.component';
 import { CoolerComponent } from './_product-components/cooler/cooler.component';
+import { OthersComponent } from './_product-components/others/others.component';
+import { OtherComponent } from './_product-components/other/other.component';
 
 @NgModule({
   declarations: [
@@ -67,7 +69,9 @@ import { CoolerComponent } from './_product-components/cooler/cooler.component';
     PsuComponent,
     ConfiguratorProductComponent,
     CoolersComponent,
-    CoolerComponent
+    CoolerComponent,
+    OthersComponent,
+    OtherComponent
   ],
   imports: [
     BrowserModule,
@@ -98,7 +102,9 @@ import { CoolerComponent } from './_product-components/cooler/cooler.component';
         { path: "psu/:id", component: PsuComponent },
         { path: "psus", component: PsusComponent },
         { path: "cooler/:id", component: CoolerComponent },
-        { path: "coolers", component: CoolersComponent }
+        { path: "coolers", component: CoolersComponent },
+        { path: "other/:id", component: OtherComponent },
+        { path: "others", component: OthersComponent }
       ]
     ),
     HttpClientModule
