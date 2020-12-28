@@ -7,6 +7,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { AngularFireDatabaseModule } from '@angular/fire/database';
 import { AngularFireModule } from '@angular/fire';
 import { AngularFireAuthModule } from '@angular/fire/auth';
+import { AngularFirestoreModule } from "@angular/fire/firestore";
 import { environment } from 'src/environments/environment';
 
 import { AppComponent } from './app.component';
@@ -74,6 +75,7 @@ import { MyBuildsComponent } from './my-builds/my-builds.component';
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireDatabaseModule,
     AngularFireAuthModule,
+    AngularFirestoreModule,
     RouterModule.forRoot(
       [
         { path: '', component: InfoComponent },

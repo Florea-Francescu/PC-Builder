@@ -7,6 +7,10 @@ import { Memory } from '../data models/Memory';
 import { Motherboard } from '../data models/Motherboard';
 import { PSU } from '../data models/PSU';
 import { Storage } from '../data models/Storage';
+import { AngularFirestore } from '@angular/fire/firestore';
+import { UserBuild } from '../data models/UserBuild';
+import { AngularFireAuth } from '@angular/fire/auth';
+import * as firebase from 'firebase';
 
 @Injectable({
   providedIn: 'root'
@@ -14,7 +18,8 @@ import { Storage } from '../data models/Storage';
 export class BuildService { /////TODO: add incomapatibility checks for the build!
   build: Build;
 
-  constructor() {
+
+  constructor(private firestore: AngularFirestore, private af: AngularFireAuth) {
     this.build = {
       "cpu": null,
       "motherboard": null,
@@ -118,4 +123,27 @@ export class BuildService { /////TODO: add incomapatibility checks for the build
   removePSU() {
     this.build.psu = null;
   }
+  saveBuild(build: Build){
+    var dateObj = new Date();
+    var month = dateObj.getUTCMonth() + 1; //months from 1-12
+    var day = dateObj.getUTCDate();
+    var year = dateObj.getUTCFullYear();
+   this.af.user.subscribe(user => {
+    return this.firestore.collection<UserBuild>('builds').add({
+       uid: user.uid,
+       build: this.build,
+       date: year + "/" + month + "/" + day,
+       buildid: "Build " + Math.floor(Math.random() * 11)
+     });
+   });
+  }
+  getUserBuilds(){
+     return this.firestore.collection('/builds', ref => ref.where('uid', '==', firebase.default.auth().currentUser.uid
+    
+     )).valueChanges();
+    //return this.firestore.collection('/builds').valueChanges(); 
+  }
+  
+
+
 }

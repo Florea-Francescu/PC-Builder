@@ -8,10 +8,10 @@
     <div class="collapse navbar-collapse" [class.collapse]="collapsed" id="navbarContent">
         <ul class="navbar-nav mr-auto">
             <li class="nav-item active">
-                <a class="nav-link" href="#">Build Info<span class="sr-only">(current)</span></a>
+                <a class="nav-link" [routerLink]="['/']">Build Info<span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">Our builds</a>
+                <a class="nav-link" [routerLink]="['/builds']">Our builds</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" [routerLink]="['/configurator']">System Configurator</a>

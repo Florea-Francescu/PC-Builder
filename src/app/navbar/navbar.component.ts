@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/auth';
 import * as firebase from 'firebase';
+import { AuthenticationService } from '../_services/authentication.service';
 @Component({
   selector: 'app-navbar',
   templateUrl: './navbar.component.html',
@@ -9,7 +10,7 @@ import * as firebase from 'firebase';
 export class NavbarComponent implements OnInit {
   collapsed=true;
   user: firebase.default.User;
-  constructor(private afAuth: AngularFireAuth) {
+  constructor(private afAuth: AngularFireAuth, private af: AuthenticationService) {
     afAuth.authState.subscribe(user => this.user = user);
    }
 
@@ -17,6 +18,7 @@ export class NavbarComponent implements OnInit {
   }
   logout(){
     this.afAuth.signOut();
+    this.af.logout();
   }
 
 }

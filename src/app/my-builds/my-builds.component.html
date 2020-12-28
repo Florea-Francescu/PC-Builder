@@ -8,18 +8,18 @@
     <table class="table">
         <thead>
             <tr>
-                <th>Build no.</th>
+                <th>Build ID</th>
                 <th>Date</th>
                 <th>Action</th>
             </tr>
         </thead>
         <tbody>
-            <tr >
+            <tr *ngFor="let b of builds$ | async">
                 <td>
-                    1
+                    {{ b.buildid }}
                 </td>
                 <td>
-                    2
+                    {{ b.date }}
                 </td>
                 <td>
                     <a [routerLink]="'#'">

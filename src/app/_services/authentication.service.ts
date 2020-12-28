@@ -46,6 +46,11 @@ export class AuthenticationService {
   }
   
   logout(){
-    this.afAuth.signOut();
+    this.isLoggedIn = false;
+    this.user = null;
+  }
+
+  loginStatus(){
+    return this.afAuth.user;
   }
 }

@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { UserBuild } from '../data models/UserBuild';
+import { BuildService } from '../_services/build.service';
 
 @Component({
   selector: 'app-my-builds',
@@ -7,9 +9,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MyBuildsComponent implements OnInit {
 
-  constructor() { }
+  builds$;
+  constructor(public buildService: BuildService) { 
+    this.builds$ = this.buildService.getUserBuilds();
+  }
 
-  ngOnInit(): void {
+  ngOnInit() {
+   
   }
 
 }
