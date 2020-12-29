@@ -1,18 +1,25 @@
 import { Injectable } from '@angular/core';
+import { NgForm } from '@angular/forms';
 import { Build } from '../data models/Build';
+import { BuildError } from '../data models/errors/BuildError';
 import { Case } from '../data models/Case';
 import { CPU } from '../data models/CPU';
+import { CpuCooler } from '../data models/CpuCooler';
 import { GPU } from '../data models/GPU';
 import { Memory } from '../data models/Memory';
 import { Motherboard } from '../data models/Motherboard';
+import { Other } from '../data models/Other';
 import { PSU } from '../data models/PSU';
 import { Storage } from '../data models/Storage';
+import { IncompatibilityError } from '../data models/errors/IncompatibilityError';
+import { IncompleteBuildError } from '../data models/errors/IncompleteBuildError';
 
 @Injectable({
   providedIn: 'root'
 })
-export class BuildService { /////TODO: add incomapatibility checks for the build!
+export class BuildService { /////TODO: add incompatibility checks for the build!
   build: Build;
+  buildErrors: BuildError[] = [];
 
   constructor() {
     this.build = {
@@ -22,7 +29,9 @@ export class BuildService { /////TODO: add incomapatibility checks for the build
       "storage": [],
       "gpu": null,
       "_case": null,
-      "psu": null
+      "psu": null,
+      "cooler": null,
+      "others": []
     }
   }
 
@@ -40,8 +49,76 @@ export class BuildService { /////TODO: add incomapatibility checks for the build
       case "GPU": this.setGPU(product); break;
       case "Case": this.setCase(product); break;
       case "PSU": this.setPSU(product); break;
+      case "CPU Cooler": this.setCooler(product); break;
+      case "Other": this.addOther(product); break;
       default: throw new Error("Unknown Product!");
     }
+  }
+
+  getErrors() {
+    this.buildErrors = [];
+    this.computeErrors();
+
+    return this.buildErrors;
+  }
+
+  private computeErrors() {
+    let incompleteBuild: IncompleteBuildError = this.getIncompleteBuildError();
+    if(incompleteBuild != null)
+      this.buildErrors.push(incompleteBuild);
+
+    let incompatibilityErrors: IncompatibilityError[] = this.getIncompatibilityErrors();
+    if(incompatibilityErrors.length > 0) 
+      for(let error of incompatibilityErrors) 
+        this.buildErrors.push(error);
+   }
+
+  private getIncompatibilityErrors(): IncompatibilityError[] {
+    let incompatibilityErrors: IncompatibilityError[] = [];
+
+    // other incompatibility errors added here
+    if(this.build.motherboard != null && this.build.cpu != null)
+      if(this.build.motherboard.socket != this.build.cpu.socket)
+        incompatibilityErrors.push(new IncompatibilityError("CPU", "Motherboard", "different sockets"));
+    
+    if(this.build.motherboard != null && this.build._case != null)
+      if(!this.build._case.motherboards.find(form => form === this.build.motherboard.format)) 
+        incompatibilityErrors.push(new IncompatibilityError("Motherboard", "Case", "motherboard format not supported by the case"));
+
+    if(this.build.memory.length > 0)
+      if(this.build.memory.find(mem => mem.id != this.build.memory[0].id))
+        incompatibilityErrors.push(new IncompatibilityError("Memory", "Memory", "different memories are not compatible"));
+    
+    return incompatibilityErrors;
+  }
+
+  private getIncompleteBuildError(): IncompleteBuildError {
+    let missingProducts = this.getMissingProducts();
+
+    if(missingProducts.length > 0) 
+      return new IncompleteBuildError(missingProducts);
+    return null;
+  }
+
+  private getMissingProducts(): string[] {
+    let missingProducts: string[] = [];
+
+    if(this.build.cpu == null)
+      missingProducts.push("CPU");
+    if(this.build.motherboard == null)
+      missingProducts.push("Motherboard");
+    if(this.build.memory.length == 0) 
+      missingProducts.push("Memory");
+    if(this.build.storage.length == 0) 
+      missingProducts.push("Storage");
+    if(this.build.gpu == null) 
+      missingProducts.push("GPU");
+    if(this.build._case == null)
+      missingProducts.push("Case");
+    if(this.build.psu == null) 
+      missingProducts.push("PSU");
+
+    return missingProducts;
   }
 
   //CPU
@@ -117,5 +194,29 @@ export class BuildService { /////TODO: add incomapatibility checks for the build
 
   removePSU() {
     this.build.psu = null;
+  }
+
+  //Cooler
+  setCooler(cooler: CpuCooler) {
+    this.build.cooler = cooler;
+  }
+
+  removeCooler() {
+    this.build.cooler = null;
+  }
+
+  //Others
+  addOther(other: Other) {
+    this.build.others.push(other);
+  }
+
+  removeOther(other: Other) {
+    let index = this.build.storage.findIndex(oth => oth.id === other.id);
+
+    this.build.others.splice(index, 1);
+  }
+
+  clearOthers() {
+    this.build.others = [];
   }
 }
