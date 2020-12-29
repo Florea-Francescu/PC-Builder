@@ -2,7 +2,7 @@
     <app-configurator-product [name]="'CPU'" [link]="'/cpus'">
         <div *ngIf="buildService.build.cpu" class="extra">
             <p class="text-center">
-                {{ buildService.build.cpu.name }} - {{ pricesService.getLowest(buildService.build.cpu.prices).price }} ({{ pricesService.getLowest(buildService.build.cpu.prices).seller }})
+                <a [routerLink]="['/cpu', buildService.build.cpu.id]">{{ buildService.build.cpu.name }}</a> - {{ pricesService.getLowest(buildService.build.cpu.prices).price }} ({{ pricesService.getLowest(buildService.build.cpu.prices).seller }})
             </p>
             <a 
                 (click)="buildService.removeCPU()"
@@ -18,7 +18,7 @@
     <app-configurator-product [name]="'Motherboard'" [link]="'/motherboards'">
         <div *ngIf="buildService.build.motherboard" class="extra">
             <p class="text-center">
-                {{ buildService.build.motherboard.name }} - {{ pricesService.getLowest(buildService.build.motherboard.prices).price }} ({{ pricesService.getLowest(buildService.build.motherboard.prices).seller }})
+                <a [routerLink]="['/motherboard', buildService.build.motherboard.id]">{{ buildService.build.motherboard.name }}</a> - {{ pricesService.getLowest(buildService.build.motherboard.prices).price }} ({{ pricesService.getLowest(buildService.build.motherboard.prices).seller }})
             </p>
             <a 
                 (click)="buildService.removeMotherboard()"
@@ -34,7 +34,7 @@
     <app-configurator-product [name]="'Memory'" [link]="'/memories'">
         <div *ngIf="buildService.build.memory.length >= 1" class="extra">
             <p *ngFor="let mem of buildService.build.memory" class="text-center">
-                {{ mem.name }} - {{ pricesService.getLowest(mem.prices).price }} ({{ pricesService.getLowest(mem.prices).seller }})
+                <a [routerLink]="['/memory', mem.id]">{{ mem.name }}</a> - {{ pricesService.getLowest(mem.prices).price }} ({{ pricesService.getLowest(mem.prices).seller }})
             </p>
             <a 
                 (click)="buildService.clearMemory()"
@@ -50,7 +50,7 @@
     <app-configurator-product [name]="'Storage'" [link]="'/storages'">
         <div *ngIf="buildService.build.storage.length >= 1" class="extra">
             <p *ngFor="let sto of buildService.build.storage" class="text-center">
-                {{ sto.name }} - {{ pricesService.getLowest(sto.prices).price }} ({{ pricesService.getLowest(sto.prices).seller }})
+                <a [routerLink]="['/storage', sto.id]">{{ sto.name }}</a> - {{ pricesService.getLowest(sto.prices).price }} ({{ pricesService.getLowest(sto.prices).seller }})
             </p>
             <a 
                 (click)="buildService.clearStorage()"
@@ -66,7 +66,7 @@
     <app-configurator-product [name]="'GPU'" [link]="'/gpus'">
         <div *ngIf="buildService.build.gpu" class="extra">
             <p *ngIf="buildService.build.gpu" class="text-center">
-                {{ buildService.build.gpu.name }} - {{ pricesService.getLowest(buildService.build.gpu.prices).price }} ({{ pricesService.getLowest(buildService.build.gpu.prices).seller }})
+                <a [routerLink]="['/gpu', buildService.build.gpu.id]">{{ buildService.build.gpu.name }}</a> - {{ pricesService.getLowest(buildService.build.gpu.prices).price }} ({{ pricesService.getLowest(buildService.build.gpu.prices).seller }})
             </p>
             <a 
                 (click)="buildService.removeGPU()"
@@ -82,7 +82,7 @@
     <app-configurator-product [name]="'Case'" [link]="'/cases'">
         <div *ngIf="buildService.build._case" class="extra">
             <p *ngIf="buildService.build._case" class="text-center">
-                {{ buildService.build._case.name }} - {{ pricesService.getLowest(buildService.build._case.prices).price }} ({{ pricesService.getLowest(buildService.build._case.prices).seller }})
+                <a [routerLink]="['/case', buildService.build._case.id]">{{ buildService.build._case.name }}</a> - {{ pricesService.getLowest(buildService.build._case.prices).price }} ({{ pricesService.getLowest(buildService.build._case.prices).seller }})
             </p>
             <a 
                 (click)="buildService.removeCase()"
@@ -98,7 +98,7 @@
     <app-configurator-product [name]="'PSU'" [link]="'/psus'">
         <div *ngIf="buildService.build.psu" class="extra">
             <p *ngIf="buildService.build.psu" class="text-center">
-                {{ buildService.build.psu.name }} - {{ pricesService.getLowest(buildService.build.psu.prices).price }} ({{ pricesService.getLowest(buildService.build.psu.prices).seller }})
+                <a [routerLink]="['/psu', this.buildService.build.psu.id]">{{ buildService.build.psu.name }}</a> - {{ pricesService.getLowest(buildService.build.psu.prices).price }} ({{ pricesService.getLowest(buildService.build.psu.prices).seller }})
             </p>
             <a 
                 (click)="buildService.removePSU()"
@@ -111,16 +111,41 @@
         </div>
     </app-configurator-product>
 
-    <app-configurator-product [name]="'CPU Cooler'" [link]="'/coolers'"></app-configurator-product>
+    <app-configurator-product [name]="'CPU Cooler'" [link]="'/coolers'">
+        <div *ngIf="buildService.build.cooler" class="extra">
+            <p *ngIf="buildService.build.cooler" class="text-center">
+                <a [routerLink]="['/cooler', this.buildService.build.cooler.id]">{{ buildService.build.cooler.name }}</a> - {{ pricesService.getLowest(buildService.build.cooler.prices).price }} ({{ pricesService.getLowest(buildService.build.cooler.prices).seller }})
+            </p>
+            <a 
+                (click)="buildService.removeCooler()"
+                class="btn btn-primary btn-block">
+                <span class="material-icons align-text-bottom">
+                    remove
+                </span>
+                Remove Cooler
+            </a>
+        </div>
+    </app-configurator-product>
 
-    <app-configurator-product [name]="'Other'" [link]="'/others'"></app-configurator-product>
+
+    <app-configurator-product [name]="'Other'" [link]="'/others'">
+        <div *ngIf="buildService.build.others.length >= 1" class="extra">
+            <p *ngFor="let oth of buildService.build.others" class="text-center">
+                <a [routerLink]="['/other', oth.id]">{{ oth.name }}</a> - {{ pricesService.getLowest(oth.prices).price }} ({{ pricesService.getLowest(oth.prices).seller }})
+            </p>
+            <a 
+                (click)="buildService.clearOthers()"
+                class="btn btn-primary btn-block">
+                <span class="material-icons align-text-bottom">
+                    remove
+                </span>
+                Remove Other
+            </a>
+        </div>
+    </app-configurator-product>
     
-<div class="container">
-    
+<div class="container"> 
     <a *ngIf="authService.loginStatus()" (click)="buildService.saveBuild(buildService.build)" class="btn btn-primary btn-block">
         Submit
-    </a>
-        
-    
-
+    </a> 
 </div>

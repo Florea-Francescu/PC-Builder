@@ -17,7 +17,7 @@ export class ConfiguratorComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    
+    console.log(this.buildService.getErrors());
   }
 
 }

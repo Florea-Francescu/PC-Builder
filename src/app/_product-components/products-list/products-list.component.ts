@@ -20,14 +20,4 @@ export class ProductsListComponent implements OnInit {
 
   ngOnInit(): void {
   }
-
-  addProduct(product: any) {
-    switch(this.productName) {
-      case "CPU": this.buildService.setCPU(product); break;
-    }
-  }
-
-  printProducts() {
-    console.log(this.buildService.getBuild());
-  }
 }
