@@ -1,18 +1,24 @@
 import { Injectable } from '@angular/core';
+import { NgForm } from '@angular/forms';
 import { Build } from '../data models/Build';
+import { BuildError } from '../data models/BuildError';
 import { Case } from '../data models/Case';
 import { CPU } from '../data models/CPU';
+import { CpuCooler } from '../data models/CpuCooler';
 import { GPU } from '../data models/GPU';
 import { Memory } from '../data models/Memory';
 import { Motherboard } from '../data models/Motherboard';
+import { Other } from '../data models/Other';
 import { PSU } from '../data models/PSU';
 import { Storage } from '../data models/Storage';
 
 @Injectable({
   providedIn: 'root'
 })
-export class BuildService { /////TODO: add incomapatibility checks for the build!
+export class BuildService { /////TODO: add incompatibility checks for the build!, add rest of coimponents (cooler and others)
+                            ///// error if build is incomplete
   build: Build;
+  buildErrors: BuildError[];
 
   constructor() {
     this.build = {
@@ -22,7 +28,9 @@ export class BuildService { /////TODO: add incomapatibility checks for the build
       "storage": [],
       "gpu": null,
       "_case": null,
-      "psu": null
+      "psu": null,
+      "cooler": null,
+      "others": []
     }
   }
 
@@ -40,6 +48,8 @@ export class BuildService { /////TODO: add incomapatibility checks for the build
       case "GPU": this.setGPU(product); break;
       case "Case": this.setCase(product); break;
       case "PSU": this.setPSU(product); break;
+      case "CPU Cooler": this.setCooler(product); break;
+      case "Other": this.addOther(product); break;
       default: throw new Error("Unknown Product!");
     }
   }
@@ -117,5 +127,29 @@ export class BuildService { /////TODO: add incomapatibility checks for the build
 
   removePSU() {
     this.build.psu = null;
+  }
+
+  //Cooler
+  setCooler(cooler: CpuCooler) {
+    this.build.cooler = cooler;
+  }
+
+  removeCooler() {
+    this.build.cooler = null;
+  }
+
+  //Others
+  addOther(other: Other) {
+    this.build.others.push(other);
+  }
+
+  removeOther(other: Other) {
+    let index = this.build.storage.findIndex(oth => oth.id === other.id);
+
+    this.build.others.splice(index, 1);
+  }
+
+  clearOthers() {
+    this.build.others = [];
   }
 }

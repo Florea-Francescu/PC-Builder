@@ -111,7 +111,35 @@
         </div>
     </app-configurator-product>
 
-    <app-configurator-product [name]="'CPU Cooler'" [link]="'/coolers'"></app-configurator-product>
+    <app-configurator-product [name]="'CPU Cooler'" [link]="'/coolers'">
+        <div *ngIf="buildService.build.cooler" class="extra">
+            <p *ngIf="buildService.build.cooler" class="text-center">
+                {{ buildService.build.cooler.name }} - {{ pricesService.getLowest(buildService.build.cooler.prices).price }} ({{ pricesService.getLowest(buildService.build.cooler.prices).seller }})
+            </p>
+            <a 
+                (click)="buildService.removeCooler()"
+                class="btn btn-primary btn-block">
+                <span class="material-icons align-text-bottom">
+                    remove
+                </span>
+                Remove Cooler
+            </a>
+        </div>
+    </app-configurator-product>
 
-    <app-configurator-product [name]="'Other'" [link]="'/others'"></app-configurator-product>
+    <app-configurator-product [name]="'Other'" [link]="'/others'">
+        <div *ngIf="buildService.build.others.length >= 1" class="extra">
+            <p *ngFor="let oth of buildService.build.others" class="text-center">
+                {{ oth.name }} - {{ pricesService.getLowest(oth.prices).price }} ({{ pricesService.getLowest(oth.prices).seller }})
+            </p>
+            <a 
+                (click)="buildService.clearOthers()"
+                class="btn btn-primary btn-block">
+                <span class="material-icons align-text-bottom">
+                    remove
+                </span>
+                Remove Other
+            </a>
+        </div>
+    </app-configurator-product>
 </div>
