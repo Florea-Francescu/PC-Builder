@@ -85,6 +85,10 @@ export class BuildService { /////TODO: add incompatibility checks for the build!
       if(!this.build._case.motherboards.find(form => form === this.build.motherboard.format)) 
         incompatibilityErrors.push(new IncompatibilityError("Motherboard", "Case", "motherboard format not supported by the case"));
 
+    if(this.build.memory.length > 0)
+      if(this.build.memory.find(mem => mem.id != this.build.memory[0].id))
+        incompatibilityErrors.push(new IncompatibilityError("Memory", "Memory", "different memories are not compatible"));
+    
     return incompatibilityErrors;
   }
 
