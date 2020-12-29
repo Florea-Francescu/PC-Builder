@@ -23,10 +23,10 @@
                     {{ b.date }}
                 </td>
                 <td>
-                    {{ b.total }}
+                    {{ b.total | number: '1.2-2' }}
                 </td>
                 <td>
-                    <a [routerLink]="'#'">
+                    <a [routerLink]="['/','view-builds', b.buildid]">
                         View
                     </a>
                 </td>

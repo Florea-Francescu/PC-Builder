@@ -45,6 +45,7 @@ import { CoolersComponent } from './_product-components/coolers/coolers.componen
 import { CoolerComponent } from './_product-components/cooler/cooler.component';
 import { OthersComponent } from './_product-components/others/others.component';
 import { OtherComponent } from './_product-components/other/other.component';
+import { ViewBuildsComponent } from './view-builds/view-builds.component';
 
 
 
@@ -80,7 +81,8 @@ import { OtherComponent } from './_product-components/other/other.component';
     CoolersComponent,
     CoolerComponent,
     OthersComponent,
-    OtherComponent
+    OtherComponent,
+    ViewBuildsComponent
 
   ],
   imports: [
@@ -116,7 +118,8 @@ import { OtherComponent } from './_product-components/other/other.component';
         { path: "cooler/:id", component: CoolerComponent },
         { path: "coolers", component: CoolersComponent },
         { path: "other/:id", component: OtherComponent },
-        { path: "others", component: OthersComponent }
+        { path: "others", component: OthersComponent },
+        { path: "view-builds/:id", component: ViewBuildsComponent }
       ]
     ),
     HttpClientModule
