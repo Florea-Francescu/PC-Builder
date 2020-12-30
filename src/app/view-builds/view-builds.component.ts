@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { UserBuild } from '../data models/UserBuild';
 import { BuildService } from '../_services/build.service';
+import { PricesService } from '../_services/prices.service';
 import { ProductsService } from '../_services/products.service';
 
 @Component({
@@ -12,7 +13,7 @@ import { ProductsService } from '../_services/products.service';
 export class ViewBuildsComponent implements OnInit {
   myBuild: UserBuild;
 
-  constructor( private productsService: BuildService,
+  constructor( private productsService: BuildService, public priceService: PricesService,
     private route: ActivatedRoute) { }
 
   ngOnInit(): void {

@@ -1,16 +1,69 @@
 
 <div class="container" *ngIf="myBuild">
-    <h3>Your Build</h3>
-    <h5>Details</h5>
-    <ul class="list-group list-group-flush">
-        <li class="list-group-item">CPU: {{ myBuild.build.cpu.name }}</li>
-        <li class="list-group-item">Motherboard: {{ myBuild.build.motherboard.name }}</li>
-        <li *ngFor="let mem of myBuild.build.memory" class="list-group-item">Memory {{ mem.name }}</li>
-        <li *ngFor="let storage of myBuild.build.storage" class="list-group-item">Storage: {{ storage.name }}</li>
-        <li class="list-group-item">GPU: {{ myBuild.build.gpu.name }}</li>
-        <li class="list-group-item">Case: {{ myBuild.build._case.name }}</li>
-        <li class="list-group-item">PSU: {{ myBuild.build.psu.name }}</li>
-        
-    </ul>
-
+    <h3>Details about your Build</h3>
+    <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">Component type</th>
+            <th scope="col">Component name</th>
+            <th scope="col">Price</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>CPU:</td>
+            <td>{{ myBuild.build.cpu.name }}</td>
+            <td>{{ priceService.getLowest(myBuild.build.cpu.prices).price }}</td>
+          </tr>
+          <tr>
+            <td>Motherboard:</td>
+            <td>{{ myBuild.build.motherboard.name }}</td>
+            <td>{{ priceService.getLowest(myBuild.build.motherboard.prices).price }}</td>
+          </tr>
+          <tr *ngFor="let mem of myBuild.build.memory">
+            <td>Memory </td>
+            <td> {{ mem.name }}</td>
+            <td> {{ priceService.getLowest(mem.prices).price }}</td>
+          </tr>
+          <tr *ngFor="let storage of myBuild.build.storage">
+            <td>Storage </td>
+            <td> {{ storage.name }}</td>
+            <td> {{ priceService.getLowest(storage.prices).price }}</td>
+          </tr>
+          <tr>
+            <td>GPU: </td>
+            <td>{{ myBuild.build.gpu.name }}</td>
+            <td> {{ priceService.getLowest(myBuild.build.gpu.prices).price }}</td>
+          </tr>
+          <tr>
+            <td>Case:</td>
+            <td>{{ myBuild.build._case.name }}</td>
+            <td>{{ priceService.getLowest(myBuild.build._case.prices).price }}</td>
+          </tr>
+          <tr>
+            <td>PSU</td>
+            <td>{{ myBuild.build.psu.name }}</td>
+            <td>{{ priceService.getLowest(myBuild.build.psu.prices).price }}</td>
+          </tr>
+          <tr *ngIf="myBuild.build.cooler">
+            <td>CPU Cooler</td>
+            <td>{{ myBuild.build.cooler.name }}</td>
+            <td>{{ priceService.getLowest(myBuild.build.cooler.prices).price }}</td>
+          </tr>
+          <tr *ngFor="let others of myBuild.build.others">
+            <td>Others</td>
+            <td>{{ others.name }}</td>
+            <td>{{ priceService.getLowest(others.prices).price }}</td>
+          </tr>
+          <tr>
+            <td></td>
+            <td><b><i>Total price</i></b></td>
+            <td><b>{{ myBuild.total | number: '1.2-2' }}</b></td>
+          </tr>
+         
+        </tbody>
+    </table>
+    <button class="btn btn-primary" [routerLink]="'/my-builds'">
+      Return
+    </button>
 </div>

@@ -13,7 +13,7 @@
             <td><a [routerLink]="['/', singleProductUrl, product.id]">{{ product.name }}</a></td>
             <td>{{ pricesService.getLowest(product.prices).price }}</td>
             <td>
-                <button class="btn btn-primary" (click)="buildService.addProduct(product, productName)">
+                <button class="btn btn-primary" (click)="buildService.addProduct(product, productName)" [routerLink]="'/configurator'">
                     <span class="material-icons align-text-bottom">
                         add
                     </span>
