@@ -1,5 +1,16 @@
+
 <div class="container" *ngIf="myBuild">
-    <h3>{{ myBuild.buildid }}</h3>
+    <h3>Your Build</h3>
     <h5>Details</h5>
-    {{ myBuild.build.cpu.name }}
+    <ul class="list-group list-group-flush">
+        <li class="list-group-item">CPU: {{ myBuild.build.cpu.name }}</li>
+        <li class="list-group-item">Motherboard: {{ myBuild.build.motherboard.name }}</li>
+        <li *ngFor="let mem of myBuild.build.memory" class="list-group-item">Memory {{ mem.name }}</li>
+        <li *ngFor="let storage of myBuild.build.storage" class="list-group-item">Storage: {{ storage.name }}</li>
+        <li class="list-group-item">GPU: {{ myBuild.build.gpu.name }}</li>
+        <li class="list-group-item">Case: {{ myBuild.build._case.name }}</li>
+        <li class="list-group-item">PSU: {{ myBuild.build.psu.name }}</li>
+        
+    </ul>
+
 </div>

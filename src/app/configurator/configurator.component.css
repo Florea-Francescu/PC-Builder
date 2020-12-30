@@ -17,3 +17,12 @@ app-configurator-product {
 .extra {
     padding-bottom: 10px;
 }
+.error{
+    color: red;
+    padding: 5px;
+    
+}
+.errorContainer{
+    padding-top: 10px;
+    padding-bottom: 10px;
+}

@@ -143,9 +143,15 @@
             </a>
         </div>
     </app-configurator-product>
-    
+   
+<div class="errorContainer text-center" *ngIf="buildErrors">
+    <div class="error" *ngFor="let error of buildErrors">
+        {{ error.message }}
+        
+    </div>
+</div>
 <div class="container"> 
-    <a *ngIf="authService.loginStatus()" (click)="buildService.saveBuild(buildService.build)" class="btn btn-primary btn-block">
+    <button *ngIf="authService.loginStatus()" [disabled]="buildErrors.length != 0 || ((authService.loginStatus() | async) == null)" (click)="buildService.saveBuild(buildService.build)" class="btn btn-primary btn-block">
         Submit
-    </a> 
+    </button> 
 </div>

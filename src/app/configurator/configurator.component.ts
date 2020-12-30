@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { BuildError } from '../data models/errors/BuildError';
 import { AuthenticationService } from '../_services/authentication.service';
 import { BuildService } from '../_services/build.service';
 import { PricesService } from '../_services/prices.service';
@@ -10,6 +11,7 @@ import { PricesService } from '../_services/prices.service';
 })
 export class ConfiguratorComponent implements OnInit {
 
+  buildErrors: BuildError[]=[];
   constructor(
     public buildService: BuildService,
     public pricesService: PricesService,
@@ -18,6 +20,7 @@ export class ConfiguratorComponent implements OnInit {
 
   ngOnInit(): void {
     console.log(this.buildService.getErrors());
+    this.buildErrors = this.buildService.getErrors();
   }
 
 }
