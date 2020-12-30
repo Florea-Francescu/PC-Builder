@@ -1,0 +1,45 @@
+<div class="container">
+<h1>My Builds</h1>
+<ng-container>
+    <p>
+    Here are your builds
+    
+    </p>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Build ID</th>
+                <th>Date</th>
+                <th>Total price</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let b of builds$ | async">
+                <td>
+                    {{ b.buildid }}
+                </td>
+                <td>
+                    {{ b.date }}
+                </td>
+                <td>
+                    {{ b.total | number: '1.2-2' }}
+                </td>
+                <td>
+                    <a [routerLink]="['/','view-builds', b.buildid]">
+                        View
+                    </a>
+                </td>
+            </tr>
+        </tbody>
+        <tfoot>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>  
+            </tr>
+        </tfoot>
+    </table>
+
+    </ng-container>
+</div>

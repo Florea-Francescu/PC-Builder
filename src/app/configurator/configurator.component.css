@@ -6,7 +6,23 @@
 app-configurator-product {
     border-radius: 0%;
 }
+.container{
+    padding-top: 10px;
+    margin: auto;
+    width: 400px;
+    max-width: 100rem;
+
+}
 
 .extra {
+    padding-bottom: 10px;
+}
+.error{
+    color: red;
+    padding: 5px;
+    
+}
+.errorContainer{
+    padding-top: 10px;
     padding-bottom: 10px;
 }

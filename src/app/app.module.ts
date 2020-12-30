@@ -7,6 +7,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { AngularFireDatabaseModule } from '@angular/fire/database';
 import { AngularFireModule } from '@angular/fire';
 import { AngularFireAuthModule } from '@angular/fire/auth';
+import { AngularFirestoreModule } from '@angular/fire/firestore';
+import { AngularFireStorageModule } from '@angular/fire/storage';
 import { environment } from 'src/environments/environment';
 
 import { AppComponent } from './app.component';
@@ -37,10 +39,16 @@ import { PsusComponent } from './_product-components/psus/psus.component';
 import { PsuComponent } from './_product-components/psu/psu.component';
 import { ConfiguratorProductComponent } from './configurator-product/configurator-product.component';
 import { AuthenticationService } from './_services/authentication.service';
+ 
+import { MyBuildsComponent } from './my-builds/my-builds.component';
+
 import { CoolersComponent } from './_product-components/coolers/coolers.component';
 import { CoolerComponent } from './_product-components/cooler/cooler.component';
 import { OthersComponent } from './_product-components/others/others.component';
 import { OtherComponent } from './_product-components/other/other.component';
+import { ViewBuildsComponent } from './view-builds/view-builds.component';
+
+
 
 @NgModule({
   declarations: [
@@ -68,10 +76,15 @@ import { OtherComponent } from './_product-components/other/other.component';
     PsusComponent,
     PsuComponent,
     ConfiguratorProductComponent,
+
+    MyBuildsComponent,
+
     CoolersComponent,
     CoolerComponent,
     OthersComponent,
-    OtherComponent
+    OtherComponent,
+    ViewBuildsComponent
+
   ],
   imports: [
     BrowserModule,
@@ -80,11 +93,14 @@ import { OtherComponent } from './_product-components/other/other.component';
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireDatabaseModule,
     AngularFireAuthModule,
+    AngularFirestoreModule,
+    AngularFireStorageModule,
     RouterModule.forRoot(
       [
         { path: '', component: InfoComponent },
         { path: 'login', component: LoginComponent },
         { path: 'signup', component: SignupComponent },
+        { path: 'my-builds', component: MyBuildsComponent },
         { path: 'configurator', component: ConfiguratorComponent },
         { path: 'builds', component: BuildsComponent },
         { path: 'cpu/:id', component: CpuComponent },
@@ -104,7 +120,8 @@ import { OtherComponent } from './_product-components/other/other.component';
         { path: "cooler/:id", component: CoolerComponent },
         { path: "coolers", component: CoolersComponent },
         { path: "other/:id", component: OtherComponent },
-        { path: "others", component: OthersComponent }
+        { path: "others", component: OthersComponent },
+        { path: "view-builds/:id", component: ViewBuildsComponent }
       ]
     ),
     HttpClientModule

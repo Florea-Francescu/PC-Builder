@@ -12,7 +12,7 @@
                 ngModel name="passwordInput" #passwordInput="ngModel"
                 type="password" class="form-control" id="passwordInput" placeholder="Password">
         </div>
-        <button type="submit" class=" mt-5 btn btn-primary btn-block" (click)="login()">Sign In</button>
+        <button type="submit" class=" mt-5 btn btn-primary btn-block" (click)="login()" [routerLink]="'/'">Sign In</button>
     </form>
     <div class="signup-text">
         <small>
