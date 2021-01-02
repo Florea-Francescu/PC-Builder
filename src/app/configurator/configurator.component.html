@@ -151,7 +151,10 @@
     </div>
 </div>
 <div class="container"> 
-    <button *ngIf="authService.loginStatus()" [disabled]="buildErrors.length != 0 || ((authService.loginStatus() | async) == null)" (click)="buildService.saveBuild(buildService.build)" class="btn btn-primary btn-block">
+    <button 
+        *ngIf="authService.loginStatus()" [disabled]="buildErrors.length != 0 || ((authService.loginStatus() | async) == null)" (click)="buildService.saveBuild(buildService.build)" 
+        class="btn btn-primary btn-block"
+        [routerLink]="['/my-builds']">
         Submit
     </button> 
 </div>

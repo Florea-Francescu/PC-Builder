@@ -5,14 +5,13 @@
 export const environment = {
   production: false,
   firebase: {
-    apiKey: "AIzaSyBV9mOQ0beTo4fEDp-M3BRStQrckMRS7Xk",
-  authDomain: "pc-builder-32274.firebaseapp.com",
-  databaseURL: "https://pc-builder-32274-default-rtdb.firebaseio.com",
-  projectId: "pc-builder-32274",
-  storageBucket: "pc-builder-32274.appspot.com",
-  messagingSenderId: "636314450651",
-  appId: "1:636314450651:web:cf5e5206f6e17dd6ffaafe",
-  measurementId: "G-44XR8P13GW"
+    apiKey: "AIzaSyAHc-Apw8jtKDy8eNBFQ_wbIDZXWOnzyVE",
+    authDomain: "pc-builder-95e36.firebaseapp.com",
+    projectId: "pc-builder-95e36",
+    storageBucket: "pc-builder-95e36.appspot.com",
+    messagingSenderId: "526053336379",
+    appId: "1:526053336379:web:0ea525ea9ce351e561031e",
+    measurementId: "G-5WQ2PZM0HC"
   }
 };
 

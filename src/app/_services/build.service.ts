@@ -66,6 +66,20 @@ export class BuildService { /////TODO: add incompatibility checks for the build!
     }
   }
 
+  clearBuild() {
+    this.build = {
+      "cpu": null,
+      "motherboard": null,
+      "memory": [],
+      "storage": [],
+      "gpu": null,
+      "_case": null,
+      "psu": null,
+      "cooler": null,
+      "others": []
+    }
+  }
+
   getErrors() {
     this.buildErrors = [];
     this.computeErrors();
@@ -234,12 +248,26 @@ export class BuildService { /////TODO: add incompatibility checks for the build!
   saveBuild(build: Build){
   
     this.af.user.subscribe(user => {
+      let build: Build = {
+        "cpu": this.build.cpu,
+        "motherboard": this.build.motherboard,
+        "memory": this.build.memory,
+        "storage": this.build.storage,
+        "gpu": this.build.gpu,
+        "_case": this.build._case,
+        "psu": this.build.psu,
+        "cooler": this.build.cooler,
+        "others": this.build.others
+      }
+
+      let total: number = this.totalPrice();
+      this.clearBuild();
      return this.firestore.collection<UserBuild>('builds').add({
         uid: user.uid,
-        build: this.build,
+        build: build,
         date: this.getDate(),
         buildid: "Build " + Math.floor(Math.random() * 11),
-        total:  this.totalPrice()
+        total:  total
       });
     });
    }

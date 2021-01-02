@@ -1,7 +1,7 @@
 .container1{
-    background: rgb(80, 5, 150);
+    background: #03506f;
     text-align: center;
-    color: blanchedalmond;
+    color: #ffe3d8;
     
 }
 
@@ -10,7 +10,7 @@
     color: black;
 }
 .container{
-    background-color: rgb(74, 71, 122);
+    background-color: #03506f;
     
 }
 @media screen and (min-width: 601px) {

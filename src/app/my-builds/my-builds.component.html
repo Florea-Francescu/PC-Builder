@@ -10,7 +10,7 @@
             <tr>
                 <th>Build ID</th>
                 <th>Date</th>
-                <th>Total price</th>
+                <th>Total price (RON)</th>
                 <th>Action</th>
             </tr>
         </thead>
@@ -28,6 +28,10 @@
                 <td>
                     <a [routerLink]="['/','view-builds', b.buildid]">
                         View
+                    </a>
+                    <br/>
+                    <a [routerLink]="['/my-builds']" (click)="removeBuild(b.buildid)">
+                        Remove
                     </a>
                 </td>
             </tr>

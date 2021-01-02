@@ -3,3 +3,18 @@
 body {
     padding-top: 70px;
 }
+
+.btn-primary {
+    background-color: #0a043c;
+    border-color: #0a043c;
+}
+
+.btn-primary:hover {
+    background-color: #bbbbbb;
+    border-color: #bbbbbb;
+}
+
+.btn-primary:disabled {
+    background-color: #211e3f;
+    border-color: #211e3f;
+}

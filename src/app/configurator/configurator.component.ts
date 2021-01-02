@@ -18,8 +18,8 @@ export class ConfiguratorComponent implements OnInit {
     public authService: AuthenticationService
   ) { }
 
-  ngOnInit(): void {
-    console.log(this.buildService.getErrors());
+  ngOnInit(
+  ): void {
     this.buildErrors = this.buildService.getErrors();
   }
 
